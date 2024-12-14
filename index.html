@@ -16,22 +16,18 @@
             background-size: cover;
             color: #fff;
         }
-
         header {
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             text-align: center;
         }
-
         header h1 {
             margin: 0;
             font-size: 2.5rem;
         }
-
         header p {
             font-size: 1.2rem;
         }
-
         header a {
             display: inline-block;
             margin-top: 10px;
@@ -42,11 +38,9 @@
             border-radius: 25px;
             transition: background 0.3s ease;
         }
-
         header a:hover {
             background: #8a70ff;
         }
-
         .hero {
             display: flex;
             flex-direction: column;
@@ -56,16 +50,13 @@
             padding: 80px 20px;
             background: rgba(41, 2, 89, 0.6);
         }
-
         .hero h2 {
             font-size: 2.5rem;
             margin: 20px 0;
         }
-
         .hero p {
             font-size: 1.5rem;
         }
-
         .hero a {
             display: inline-block;
             margin-top: 20px;
@@ -76,17 +67,14 @@
             border-radius: 25px;
             transition: background 0.3s ease;
         }
-
         .hero a:hover {
             background: #8a70ff;
         }
-
         #monuments-gallery {
             padding: 50px 20px;
             background: rgba(0, 0, 0, 0.6);
             text-align: center;
         }
-
         #monuments-gallery h2 {
             font-size: 2rem;
             margin-bottom: 30px;
@@ -96,44 +84,38 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
-
 .monument-card {
     display: flex;
-    flex-direction: column; /* Ensure vertical stacking of elements */
-    justify-content: space-between; /* Spread content evenly */
+    flex-direction: column; 
+    justify-content: space-between;
     background: #fff;
     color: #333;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    height: 100%; /* Ensure cards fill equal height */
+    height: 100%; 
 }
-
 .monument-card:hover {
     transform: translateY(-10px);
 }
-
 .monument-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
-
 .monument-card h3 {
     font-size: 1.5rem;
     margin: 15px 0 10px;
     color: #6c63ff;
 }
-
 .monument-card p {
-    flex-grow: 1; /* Allow paragraphs to fill available space evenly */
+    flex-grow: 1; 
     padding: 0 15px;
     font-size: 1rem;
     color: #666;
-    text-align: justify; /* Uniform alignment for all text */
+    text-align: justify; 
 }
-
 .monument-card a {
     display: block;
     text-align: center;
@@ -145,18 +127,14 @@
     font-weight: bold;
     transition: background 0.3s ease;
 }
-
 .monument-card a:hover {
     background: #8a70ff;
 }
-
-       
         footer {
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             text-align: center;
         }
-
         footer p {
             margin: 0;
             font-size: 1rem;
@@ -164,19 +142,15 @@
     </style>
 </head>
 <body>
-
     <header>
         <h1>Welcome to Luminari</h1>
         <p>Explore the world's most iconic historical landmarks through interactive 3D models and detailed insights.</p>
-        <a href="#monuments-gallery">Explore Now</a>
     </header>
-
   <section class="hero">
         <h2>Discover the Wonders of History</h2>
         <p>Step into the past and explore monuments that have shaped cultures around the world.</p>
         <a href="#monuments-gallery" class="cta-button">Start Exploring</a>
     </section>
-
     <section id="monuments-gallery">
         <h2>Monument Gallery</h2>
         <div class="monuments">
