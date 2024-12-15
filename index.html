@@ -16,18 +16,80 @@
             background-size: cover;
             color: #fff;
         }
+
         header {
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(62, 15, 82, 0.8);
             padding: 20px;
             text-align: center;
         }
+
         header h1 {
             margin: 0;
             font-size: 2.5rem;
         }
+
         header p {
             font-size: 1.2rem;
         }
+        nav{
+            display: flex;
+            align-item: middle;
+      
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .navbar .logo h1 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin: 0;
+        }
+
+        .navbar .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar .nav-buttons a {
+            padding: 10px 20px;
+            color: #fff;
+            background: #6c63ff;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+        }
+
+        .navbar .nav-buttons a:hover {
+            background: #8a70ff;
+        }
+        .home, .gallery, .about, .contact {
+      max-width: 1200px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+
         header a {
             display: inline-block;
             margin-top: 10px;
@@ -38,25 +100,30 @@
             border-radius: 25px;
             transition: background 0.3s ease;
         }
+
         header a:hover {
             background: #8a70ff;
         }
+
         .hero {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
             background: rgba(41, 2, 89, 0.6);
         }
+
         .hero h2 {
             font-size: 2.5rem;
             margin: 20px 0;
         }
+
         .hero p {
             font-size: 1.5rem;
         }
+
         .hero a {
             display: inline-block;
             margin-top: 20px;
@@ -67,55 +134,64 @@
             border-radius: 25px;
             transition: background 0.3s ease;
         }
+
         .hero a:hover {
             background: #8a70ff;
         }
+
         #monuments-gallery {
             padding: 50px 20px;
             background: rgba(0, 0, 0, 0.6);
             text-align: center;
         }
+
         #monuments-gallery h2 {
             font-size: 2rem;
             margin-bottom: 30px;
         }
         .monuments {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);;
+            gap: 20px;
+        }
+
 .monument-card {
     display: flex;
-    flex-direction: column; 
-    justify-content: space-between;
+    flex-direction: column; /* Ensure vertical stacking of elements */
+    justify-content: space-between; /* Spread content evenly */
     background: #fff;
     color: #333;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    height: 100%; 
+    height: 100%; /* Ensure cards fill equal height */
 }
+
 .monument-card:hover {
     transform: translateY(-10px);
 }
+
 .monument-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
+
 .monument-card h3 {
     font-size: 1.5rem;
     margin: 15px 0 10px;
     color: #6c63ff;
 }
+
 .monument-card p {
-    flex-grow: 1; 
+    flex-grow: 1; /* Allow paragraphs to fill available space evenly */
     padding: 0 15px;
     font-size: 1rem;
     color: #666;
-    text-align: justify; 
+    text-align: justify; /* Uniform alignment for all text */
 }
+
 .monument-card a {
     display: block;
     text-align: center;
@@ -127,14 +203,18 @@
     font-weight: bold;
     transition: background 0.3s ease;
 }
+
 .monument-card a:hover {
     background: #8a70ff;
 }
+
+       
         footer {
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             text-align: center;
         }
+
         footer p {
             margin: 0;
             font-size: 1rem;
@@ -142,15 +222,31 @@
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://img.freepik.com/premium-vector/monogram-typhography-logo-letter-s-m-i-with-mountain-shape_545635-112.jpg" alt="Luminari Logo">
+            <h1>Luminari</h1>
+        </div>
+
+        <div class="nav-buttons">
+                <a href="index.html">Home</a>
+                <a href="#monuments-gallery">Gallery</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
     <header>
         <h1>Welcome to Luminari</h1>
-        <p>Explore the world's most iconic historical landmarks through interactive 3D models and detailed insights.</p>
+        <p>Discover India’s rich heritage like never before! Luminary is an educational platform dedicated to exploring and celebrating the fascinating world of Indian monuments, history, and culture.</p>
     </header>
+
   <section class="hero">
         <h2>Discover the Wonders of History</h2>
         <p>Step into the past and explore monuments that have shaped cultures around the world.</p>
         <a href="#monuments-gallery" class="cta-button">Start Exploring</a>
     </section>
+
     <section id="monuments-gallery">
         <h2>Monument Gallery</h2>
         <div class="monuments">
@@ -213,6 +309,42 @@
                 <h3>SANCHI STUPA</h3>
                 <p>Situated in Madhya Pradesh, India, this ancient Buddhist monument is renowned for its serene dome and intricately carved gateways.</p>
                 <a href="SANCHI.html">Explore</a>
+            </div>
+            <div class="monument-card">
+                <img src="https://d2228rr16d3wie.cloudfront.net/photos/places/Madhya+Pradesh/Khajuraho.webp" alt="KAJURAHO">
+                <h3>KAJURAHO</h3>
+                <p>Situated in Madhya Pradesh, India, Khajuraho is an ancient UNESCO World Heritage site renowned for its intricately carved Hindu and Jain temples, celebrated for their artistic brilliance and bold depictions of life, spirituality, and human emotions.</p>
+                <a href="KUJURAHO.html">Explore</a>
+            </div>
+            <div class="monument-card">
+                <img src="https://www.theleela.com/prod/content/assets/styles/tl_1920_735/public/aio-banner/dekstop/Gateway-of-India.jpg.webp?VersionId=BBxisw7aW9Kz83zStkv29pnD8GMbviPB&itok=MEEZTfkO" alt="GATE WAY OF MUMBAI">
+                <h3>GATE WAY OF MUMBAI</h3>
+                <p>Situated in Mumbai, India, the Gateway of India is an iconic monument renowned for its majestic arch, built in Indo-Saracenic style, commemorating the arrival of King George V and Queen Mary in 1911.</p>
+                <a href="GATE.html">Explore</a>
+            </div>
+            <div class="monument-card">
+                <img src="https://sacredsites.com/images/asia/india/golden_temple_1200.jpg" alt="GOLDEN TEMPLE">
+                <h3>GOLDEN TEMPLE</h3>
+                <p>Situated in Amritsar, Punjab, India, the Golden Temple is a renowned Sikh gurudwara, celebrated for its stunning golden façade, serene water body (Amrit Sarovar), and its spiritual significance as a symbol of equality and humility.</p>
+                <a href="GOLDEN.html">Explore</a>
+            </div>
+            <div class="monument-card">
+                <img src="https://res.cloudinary.com/dyiffrkzh/image/upload/c_fill,f_auto,fl_progressive.strip_profile,g_center,h_400,q_auto,w_700/v1684310858/bbj/msard1r8d1gmybc3cogb.jpg" alt="VICTORIA TERMINUS">
+                <h3>VICTORIA TERMINUS</h3>
+                <p>Situated in Mumbai, India, the Victoria Terminus (now Chhatrapati Shivaji Maharaj Terminus) is a renowned UNESCO World Heritage site, celebrated for its Indo-Gothic architecture and significance as a historic railway station and architectural marvel.</p>
+                <a href="VICTORIA.html">Explore</a>
+            </div>
+            <div class="monument-card">
+                <img src="https://images.cnbctv18.com/wp-content/uploads/2022/08/Agra-Fort.jpg?impolicy=website&width=1200&height=900" alt="AGRA FORT">
+                <h3>AGRA FORT</h3>
+                <p>Situated in Agra, Uttar Pradesh, India, Agra Fort is a renowned UNESCO World Heritage site, celebrated for its grand Mughal architecture, massive red sandstone walls, and historical significance as a royal residence and military stronghold.</p>
+                <a href="AGRA.html">Explore</a>
+            </div>
+            <div class="monument-card">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/99/ae/7f/images-14-largejpg.jpg?w=700&h=400&s=1" alt="MEHRANGARH FORT">
+                <h3>MEHRANGARH FORT</h3>
+                <p>Situated in Madhya Pradesh, India, this ancient Buddhist monument is renowned for its serene dome and intricately carved gateways.</p>
+                <a href="FORT.html">Explore</a>
             </div>
         </div>
     </section>
