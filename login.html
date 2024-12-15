@@ -7,101 +7,138 @@
     <title>Login - Luminari</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
-            padding-top: 100px;
+            background-image: url('https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with your background image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            backdrop-filter: brightness(0.8); 
         }
-        form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 300px;
-            margin: auto;
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .container h2 {
+            margin-bottom: 15px;
+            color: #6c63ff;
+            font-size: 1.8rem;
+        }
+        .container p {
+            margin: 10px 0 20px;
+            font-size: 1rem;
+            color: #555;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
             text-align: left;
         }
-        label {
+        .form-group label {
+            display: block;
             font-size: 14px;
             color: #333;
             margin-bottom: 5px;
-            display: block;
         }
-        input[type="text"], input[type="email"], input[type="password"] {
+        .form-group input {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
+            padding: 12px;
+            font-size: 14px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 8px;
+            outline: none;
+            transition: border 0.3s;
         }
-        button {
+
+        .form-group input:focus {
+            border-color: #6c63ff;
+        }
+        .btn {
+            display: block;
             width: 100%;
-            padding: 10px;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
             background-color: #6c63ff;
-            color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
+            transition: background 0.3s;
         }
-        button:hover {
+        .btn:hover {
             background-color: #8a70ff;
         }
         .signup-link {
-            margin-top: 10px;
-            display: block;
+            margin-top: 15px;
             font-size: 0.9rem;
+            color: #555;
         }
         .signup-link a {
-            text-decoration: none;
             color: #6c63ff;
+            text-decoration: none;
+            font-weight: bold;
         }
         .signup-link a:hover {
             color: #8a70ff;
         }
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
-    <h2>Login to Luminari</h2>
-    <form id="loginForm">
-        <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Enter your username" required>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Enter your email" required>
-
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter your password" required>
-
-        <button type="submit">Login</button>
-    </form>
-
-    <div class="signup-link">
-        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    <div class="container">
+        <h2>Welcome Back</h2>
+        <p>Please log in to continue exploring Luminari.</p>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <div class="signup-link">
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </div>
     </div>
-
     <script>
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault();
             const username = document.getElementById("username").value;
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
-            
-            // Validation for empty fields
             if (!username) {
                 alert("Please enter your username.");
                 return;
             }
-
-            // Username validation (can customize as per requirements)
-            const usernameRegex = /^[a-zA-Z0-9_]+$/;  // Only letters, numbers, and underscores
+            const usernameRegex = /^[a-zA-Z0-9_]+$/; 
             if (!usernameRegex.test(username)) {
                 alert("Please enter a valid username (letters, numbers, and underscores only).");
                 return;
             }
-
-            // Email validation
             const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
             if (!email) {
                 alert("Please enter your email.");
@@ -110,8 +147,6 @@
                 alert("Please enter a valid email address.");
                 return;
             }
-
-            // Password validation
             if (!password) {
                 alert("Please enter your password.");
                 return;
@@ -119,11 +154,9 @@
                 alert("Password must be at least 8 characters long.");
                 return;
             }
-
-            // If all validations pass, show success message and redirect
-            alert("Login successful!"); // Display success message
+            alert("Login successful!");
             localStorage.setItem("loggedIn", "true");
-            window.location.href = "index.html"; // Redirect to index page
+            window.location.href = "index.html"; 
         });
     </script>
 </body>
