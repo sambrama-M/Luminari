@@ -12,29 +12,26 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background: url('https://www.hdwallpapers.in/download/colorful_texture_4k_hd_abstract-HD.jpg') no-repeat center center fixed;
+            background: url("Pictures/colorful_texture_4k_hd_abstract.jpg") no-repeat center center fixed;
             background-size: cover;
             color: #fff;
+            scroll-behavior: smooth;
         }
-
         header {
             background-color: rgba(62, 15, 82, 0.8);
             padding: 20px;
             text-align: center;
         }
-
         header h1 {
             margin: 0;
             font-size: 2.5rem;
         }
-
         header p {
             font-size: 1.2rem;
         }
         nav{
             display: flex;
-            align-item: middle;
-      
+            align-items: middle;
         }
         .navbar {
             display: flex;
@@ -46,50 +43,44 @@
             top: 0;
             z-index: 1000;
         }
-
         .navbar .logo {
             display: flex;
             align-items: center;
         }
-
         .navbar .logo img {
             width: 50px;
             height: 50px;
             margin-right: 10px;
         }
-
         .navbar .logo h1 {
             font-size: 1.8rem;
             color: #fff;
             margin: 0;
         }
-
         .navbar .nav-buttons {
             display: flex;
             gap: 15px;
         }
-
-        .navbar .nav-buttons a {
+        .navbar .nav-buttons a, .navbar .nav-buttons button {
             padding: 10px 20px;
             color: #fff;
             background: #6c63ff;
             text-decoration: none;
+            border: none;
             border-radius: 25px;
+            cursor: pointer;
             transition: background 0.3s ease;
         }
-
-        .navbar .nav-buttons a:hover {
+        .navbar .nav-buttons a:hover, .navbar .nav-buttons button:hover {
             background: #8a70ff;
         }
         .home, .gallery, .about, .contact {
-      max-width: 1200px;
-      margin: auto;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-
+            max-width: 1200px;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
         header a {
             display: inline-block;
             margin-top: 10px;
@@ -100,11 +91,9 @@
             border-radius: 25px;
             transition: background 0.3s ease;
         }
-
         header a:hover {
             background: #8a70ff;
         }
-
         .hero {
             display: flex;
             flex-direction: column;
@@ -114,16 +103,13 @@
             padding: 100px 20px;
             background: rgba(41, 2, 89, 0.6);
         }
-
         .hero h2 {
             font-size: 2.5rem;
             margin: 20px 0;
         }
-
         .hero p {
             font-size: 1.5rem;
         }
-
         .hero a {
             display: inline-block;
             margin-top: 20px;
@@ -134,17 +120,14 @@
             border-radius: 25px;
             transition: background 0.3s ease;
         }
-
         .hero a:hover {
             background: #8a70ff;
         }
-
         #monuments-gallery {
             padding: 50px 20px;
             background: rgba(0, 0, 0, 0.6);
             text-align: center;
         }
-
         #monuments-gallery h2 {
             font-size: 2rem;
             margin-bottom: 30px;
@@ -154,202 +137,263 @@
             grid-template-columns: repeat(4, 1fr);;
             gap: 20px;
         }
-
-.monument-card {
-    display: flex;
-    flex-direction: column; /* Ensure vertical stacking of elements */
-    justify-content: space-between; /* Spread content evenly */
-    background: #fff;
-    color: #333;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    height: 100%; /* Ensure cards fill equal height */
-}
-
-.monument-card:hover {
-    transform: translateY(-10px);
-}
-
-.monument-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.monument-card h3 {
-    font-size: 1.5rem;
-    margin: 15px 0 10px;
-    color: #6c63ff;
-}
-
-.monument-card p {
-    flex-grow: 1; /* Allow paragraphs to fill available space evenly */
-    padding: 0 15px;
-    font-size: 1rem;
-    color: #666;
-    text-align: justify; /* Uniform alignment for all text */
-}
-
-.monument-card a {
-    display: block;
-    text-align: center;
-    background: #6c63ff;
-    color: #fff;
-    padding: 10px;
-    text-decoration: none;
-    border-radius: 0 0 10px 10px;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-
-.monument-card a:hover {
-    background: #8a70ff;
-}
-
-       
+        .about, .contact {
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.6);
+            margin-top: 50px;
+        }
+        .about h2, .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .about p, .contact p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        .monument-card {
+            display: flex;
+            flex-direction: column; 
+            justify-content: space-between; 
+            background: #fff;
+            color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%; 
+        }
+        .monument-card:hover {
+            transform: translateY(-10px);
+        }
+        .monument-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .monument-card h3 {
+            font-size: 1.5rem;
+            margin: 15px 0 10px;
+            color: #6c63ff;
+        }
+        .monument-card p {
+            flex-grow: 1; 
+            padding: 0 15px;
+            font-size: 1rem;
+            color: #666;
+            text-align: justify; 
+        }
+        .monument-card a {
+            display: block;
+            text-align: center;
+            background: #6c63ff;
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 0 0 10px 10px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        .monument-card a:hover {
+            background: #8a70ff;
+        }
         footer {
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             text-align: center;
         }
-
         footer p {
             margin: 0;
             font-size: 1rem;
         }
-    </style>
-</head>
-<body>
-    <div class="navbar">
-        <div class="logo">
-            <img src="https://img.freepik.com/premium-vector/monogram-typhography-logo-letter-s-m-i-with-mountain-shape_545635-112.jpg" alt="Luminari Logo">
-            <h1>Luminari</h1>
-        </div>
-
-        <div class="nav-buttons">
-                <a href="index.html">Home</a>
+        </style>
+        </head>
+        <body>
+            <div class="navbar">
+                <div class="logo">
+                    <img src="https://img.freepik.com/premium-vector/monogram-typhography-logo-letter-s-m-i-with-mountain-shape_545635-112.jpg" alt="Luminari Logo">
+                    <h1>Luminari</h1>
+                </div>
+            <div class="nav-buttons">
+                <a href="#" id="home-button">Home</a>
                 <a href="#monuments-gallery">Gallery</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-        </div>
-    </div>
-
-    <header>
-        <h1>Welcome to Luminari</h1>
-        <p>Discover India’s rich heritage like never before! Luminary is an educational platform dedicated to exploring and celebrating the fascinating world of Indian monuments, history, and culture.</p>
-    </header>
-
-  <section class="hero">
-        <h2>Discover the Wonders of History</h2>
-        <p>Step into the past and explore monuments that have shaped cultures around the world.</p>
-        <a href="#monuments-gallery" class="cta-button">Start Exploring</a>
-    </section>
-
-    <section id="monuments-gallery">
-        <h2>Monument Gallery</h2>
-        <div class="monuments">
-            <div class="monument-card">
-                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dGFqJTIwbWFoYWx8ZW58MHx8MHx8fDA%3D" alt="TAJ MAHAL">
-                <h3>TAJ MAHAL</h3>
-                <p>Located in Agra, India, this magnificent white marble mausoleum is a timeless symbol of love and architectural brilliance.</p>
-                <a href="TAJ-MAHAL.html">Explore</a>
-            </div>
-            <div class="monument-card">
-                <img src="https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/27/5c47137b8b32bdc3702a6c0b4b2359e9_1000x1000.jpg" alt="INDIAN GATE">
-                <h3>INDIAN GATE</h3>
-                <p>Located in New Delhi, India, the India Gate stands as a majestic war memorial, honoring the bravery and sacrifice of Indian soldiers.</p>
-                <a href="INDIAN-GATE.html">Explore</a>
-            </div>
-            <div class="monument-card">
-                <img src="https://cdn.pixabay.com/photo/2022/01/28/08/13/hawa-mahal-6973938_1280.jpg" alt="HAWA MAHAL">
-                <h3>HAWA MAHAL</h3>
-                <p>Located in Jaipur, India, the Hawa Mahal, or "Palace of Winds," is a stunning architectural marvel known for its intricate latticework and royal heritage.</p>
-                <a href="HAWA-MAHAL.html">Explore</a>
-            </div>
-            <div class="monument-card">
-                <img src="https://static.toiimg.com/thumb/51010213/Mysore-Palace.jpg?width=1200&height=900" alt="MYSORE PALACE">
-                <h3>MYSORE PALACE</h3>
-                <p>Located in Mysore, India, this grand palace is a breathtaking blend of Indo-Saracenic architecture and a symbol of royal heritage.</p>
-                <a href="MYSORE-PALACE.html">Explore</a>
-            </div>
-            <div class="monument-card">
-                <img src="https://preview.redd.it/29gedzueqwh71.png?auto=webp&s=eb66e3987cf3c3294f3ee05d93a17435e97ae4f1" alt="HAMPI VITHALA TEMPLE">
-                <h3>HAMPI VITHALA TEMPLE</h3>
-                <p>Nestled in Hampi, India, this temple is renowned for its iconic stone chariot and mesmerizing musical pillars.</p>
-                <a href="HAMPI.html">Explore</a>
-            </div>
-            <div class="monument-card">
-                <img src="https://i.pinimg.com/736x/23/8f/28/238f2839f4f99b4e3a7020d09ea48cd9.jpg" alt="LOTUS TEMPLE">
-                <h3>LOTUS TEMPLE</h3>
-                <p>Situated in Delhi, India, this Bahá'í House of Worship captivates with its lotus-inspired design and serene ambiance.</p>
-                <a href="LOTUS.html">Explore</a>
-            </div>
-            <div class="monument-card">
-                <img src="https://cdn.pixabay.com/photo/2021/11/19/04/51/temple-6808093_1280.jpg" alt="Konark Sun Temple">
-                <h3>KONARK SUN TEMPLE</h3>
-                <p>Found in Odisha, India, this UNESCO World Heritage site is famed for its intricate carvings and magnificent chariot-like structure dedicated to the Sun God.</p>
-                <a href="KONARK.html">Explore</a>
-            </div>
-            <div class="monument-card">
-                <img src="https://kevinstandagephotography.wordpress.com/wp-content/uploads/2021/03/ksp_0329s.jpg?w=1000" alt="Humayun's Tomb">
-                <h3>HUMAYUN'S TOMB</h3>
-                <p>Located in Delhi, India, this stunning Mughal mausoleum is a precursor to the Taj Mahal and a UNESCO World Heritage site.</p>
-                <a href="TOMB.html">Explore</a>
-            </div>
-            <div class="monument-card">
-                <img src="https://media.istockphoto.com/id/470586352/photo/kailas-temple-ellora.jpg?s=612x612&w=0&k=20&c=ld95eeyLHKbjCpmD61L6x5TAyRrsdqiRc0i8Cig2aB0=" alt="Ajanta Ellora Caves">
-                <h3>AJANTA ELLORA CAVES</h3>
-                <p>These ancient caves in Maharashtra, India, showcase incredible rock-cut sculptures, paintings, and temples of Buddhist, Hindu, and Jain traditions.</p>
-                <a href="AJANTA.html">Explore</a>
-            </div>
-            <div class="monument-card">
-                <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2021/02/22141026/5r4t-12.jpg" alt="Sanchi Stupa">
-                <h3>SANCHI STUPA</h3>
-                <p>Situated in Madhya Pradesh, India, this ancient Buddhist monument is renowned for its serene dome and intricately carved gateways.</p>
-                <a href="SANCHI.html">Explore</a>
-            </div>
-            <div class="monument-card">
-                <img src="https://d2228rr16d3wie.cloudfront.net/photos/places/Madhya+Pradesh/Khajuraho.webp" alt="KAJURAHO">
-                <h3>KAJURAHO</h3>
-                <p>Situated in Madhya Pradesh, India, Khajuraho is an ancient UNESCO World Heritage site renowned for its intricately carved Hindu and Jain temples, celebrated for their artistic brilliance and bold depictions of life, spirituality, and human emotions.</p>
-                <a href="KUJURAHO.html">Explore</a>
-            </div>
-            <div class="monument-card">
-                <img src="https://www.theleela.com/prod/content/assets/styles/tl_1920_735/public/aio-banner/dekstop/Gateway-of-India.jpg.webp?VersionId=BBxisw7aW9Kz83zStkv29pnD8GMbviPB&itok=MEEZTfkO" alt="GATE WAY OF MUMBAI">
-                <h3>GATE WAY OF MUMBAI</h3>
-                <p>Situated in Mumbai, India, the Gateway of India is an iconic monument renowned for its majestic arch, built in Indo-Saracenic style, commemorating the arrival of King George V and Queen Mary in 1911.</p>
-                <a href="GATE.html">Explore</a>
-            </div>
-            <div class="monument-card">
-                <img src="https://sacredsites.com/images/asia/india/golden_temple_1200.jpg" alt="GOLDEN TEMPLE">
-                <h3>GOLDEN TEMPLE</h3>
-                <p>Situated in Amritsar, Punjab, India, the Golden Temple is a renowned Sikh gurudwara, celebrated for its stunning golden façade, serene water body (Amrit Sarovar), and its spiritual significance as a symbol of equality and humility.</p>
-                <a href="GOLDEN.html">Explore</a>
-            </div>
-            <div class="monument-card">
-                <img src="https://res.cloudinary.com/dyiffrkzh/image/upload/c_fill,f_auto,fl_progressive.strip_profile,g_center,h_400,q_auto,w_700/v1684310858/bbj/msard1r8d1gmybc3cogb.jpg" alt="VICTORIA TERMINUS">
-                <h3>VICTORIA TERMINUS</h3>
-                <p>Situated in Mumbai, India, the Victoria Terminus (now Chhatrapati Shivaji Maharaj Terminus) is a renowned UNESCO World Heritage site, celebrated for its Indo-Gothic architecture and significance as a historic railway station and architectural marvel.</p>
-                <a href="VICTORIA.html">Explore</a>
-            </div>
-            <div class="monument-card">
-                <img src="https://images.cnbctv18.com/wp-content/uploads/2022/08/Agra-Fort.jpg?impolicy=website&width=1200&height=900" alt="AGRA FORT">
-                <h3>AGRA FORT</h3>
-                <p>Situated in Agra, Uttar Pradesh, India, Agra Fort is a renowned UNESCO World Heritage site, celebrated for its grand Mughal architecture, massive red sandstone walls, and historical significance as a royal residence and military stronghold.</p>
-                <a href="AGRA.html">Explore</a>
-            </div>
-            <div class="monument-card">
-                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/99/ae/7f/images-14-largejpg.jpg?w=700&h=400&s=1" alt="MEHRANGARH FORT">
-                <h3>MEHRANGARH FORT</h3>
-                <p>Situated in Madhya Pradesh, India, this ancient Buddhist monument is renowned for its serene dome and intricately carved gateways.</p>
-                <a href="FORT.html">Explore</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <button id="logout-button">Logout</button>
             </div>
         </div>
-    </section>
-<footer>
-    <p>&copy; 2024 Luminari. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+        <header>
+            <h1>Welcome to Luminari</h1>
+            <p>Discover India’s rich heritage like never before! Luminary is an educational platform dedicated to exploring and celebrating the fascinating world of Indian monuments, history, and culture.</p>
+        </header>
+        <section class="hero">
+            <h2>Discover the Wonders of History</h2>
+            <p>Step into the past and explore monuments that have shaped cultures around the world.</p>
+            <a href="#monuments-gallery" class="cta-button">Start Exploring</a>
+        </section>
+        <section id="monuments-gallery">
+            <h2>Monument Gallery</h2>
+            <div class="monuments">
+                <div class="monument-card">
+                    <img src="https://images.unsplash.com/photo-1548013146-72479768bada?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dGFqJTIwbWFoYWx8ZW58MHx8MHx8fDA%3D" alt="TAJ MAHAL">
+                    <h3>TAJ MAHAL</h3>
+                    <p>Located in Agra, India, this magnificent white marble mausoleum is a timeless symbol of love and architectural brilliance.</p>
+                    <a href="TAJ-MAHAL.html">Explore</a>
+                </div>
+                <div class="monument-card">
+                    <img src="https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/27/5c47137b8b32bdc3702a6c0b4b2359e9_1000x1000.jpg" alt="INDIAN GATE">
+                    <h3>INDIAN GATE</h3>
+                    <p>Located in New Delhi, India, the India Gate stands as a majestic war memorial, honoring the bravery and sacrifice of Indian soldiers.</p>
+                    <a href="INDIAN-GATE.html">Explore</a>
+                </div>
+                <div class="monument-card">
+                    <img src="https://cdn.pixabay.com/photo/2022/01/28/08/13/hawa-mahal-6973938_1280.jpg" alt="HAWA MAHAL">
+                    <h3>HAWA MAHAL</h3>
+                    <p>Located in Jaipur, India, the Hawa Mahal, or "Palace of Winds," is a stunning architectural marvel known for its intricate latticework and royal heritage.</p>
+                    <a href="HAWA-MAHAL.html">Explore</a>
+                </div>
+                <div class="monument-card">
+                    <img src="https://static.toiimg.com/thumb/51010213/Mysore-Palace.jpg?width=1200&height=900" alt="MYSORE PALACE">
+                    <h3>MYSORE PALACE</h3>
+                    <p>Located in Mysore, India, this grand palace is a breathtaking blend of Indo-Saracenic architecture and a symbol of royal heritage.</p>
+                    <a href="MYSORE-PALACE.html">Explore</a>
+                </div>
+                <div class="monument-card">
+                    <img src="https://preview.redd.it/29gedzueqwh71.png?auto=webp&s=eb66e3987cf3c3294f3ee05d93a17435e97ae4f1" alt="HAMPI VITHALA TEMPLE">
+                    <h3>HAMPI VITHALA TEMPLE</h3>
+                    <p>Nestled in Hampi, India, this temple is renowned for its iconic stone chariot and mesmerizing musical pillars.</p>
+                    <a href="HAMPI.html">Explore</a>
+                </div>
+                <div class="monument-card">
+                    <img src="https://i.pinimg.com/736x/23/8f/28/238f2839f4f99b4e3a7020d09ea48cd9.jpg" alt="LOTUS TEMPLE">
+                    <h3>LOTUS TEMPLE</h3>
+                    <p>Situated in Delhi, India, this Bahá'í House of Worship captivates with its lotus-inspired design and serene ambiance.</p>
+                    <a href="LOTUS.html">Explore</a>
+                </div>
+                <div class="monument-card">
+                    <img src="https://cdn.pixabay.com/photo/2021/11/19/04/51/temple-6808093_1280.jpg" alt="Konark Sun Temple">
+                    <h3>KONARK SUN TEMPLE</h3>
+                    <p>Found in Odisha, India, this UNESCO World Heritage site is famed for its intricate carvings and magnificent chariot-like structure dedicated to the Sun God.</p>
+                    <a href="KONARK.html">Explore</a>
+                </div>
+                <div class="monument-card">
+                    <img src="https://kevinstandagephotography.wordpress.com/wp-content/uploads/2021/03/ksp_0329s.jpg?w=1000" alt="Humayun's Tomb">
+                    <h3>HUMAYUN'S TOMB</h3>
+                    <p>Located in Delhi, India, this stunning Mughal mausoleum is a precursor to the Taj Mahal and a UNESCO World Heritage site.</p>
+                    <a href="TOMB.html">Explore</a>
+                </div>
+                <div class="monument-card">
+                    <img src="https://media.istockphoto.com/id/470586352/photo/kailas-temple-ellora.jpg?s=612x612&w=0&k=20&c=ld95eeyLHKbjCpmD61L6x5TAyRrsdqiRc0i8Cig2aB0=" alt="Ajanta Ellora Caves">
+                    <h3>AJANTA ELLORA CAVES</h3>
+                    <p>These ancient caves in Maharashtra, India, showcase incredible rock-cut sculptures, paintings, and temples of Buddhist, Hindu, and Jain traditions.</p>
+                    <a href="AJANTA.html">Explore</a>
+                </div>
+                <div class="monument-card">
+                    <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2021/02/22141026/5r4t-12.jpg" alt="Sanchi Stupa">
+                    <h3>SANCHI STUPA</h3>
+                    <p>Situated in Madhya Pradesh, India, this ancient Buddhist monument is renowned for its serene dome and intricately carved gateways.</p>
+                    <a href="SANCHI.html">Explore</a>
+                </div>
+                <div class="monument-card">
+                    <img src="https://d2228rr16d3wie.cloudfront.net/photos/places/Madhya+Pradesh/Khajuraho.webp" alt="KAJURAHO">
+                    <h3>KAJURAHO</h3>
+                    <p>Situated in Madhya Pradesh, India, Khajuraho is an ancient UNESCO World Heritage site renowned for its intricately carved Hindu and Jain temples, celebrated for their artistic brilliance and bold depictions of life, spirituality, and human emotions.</p>
+                    <a href="KUJURAHO.html">Explore</a>
+                </div>
+                <div class="monument-card">
+                    <img src="https://www.theleela.com/prod/content/assets/styles/tl_1920_735/public/aio-banner/dekstop/Gateway-of-India.jpg.webp?VersionId=BBxisw7aW9Kz83zStkv29pnD8GMbviPB&itok=MEEZTfkO" alt="GATE WAY OF MUMBAI">
+                    <h3>GATE WAY OF MUMBAI</h3>
+                    <p>Situated in Mumbai, India, the Gateway of India is an iconic monument renowned for its majestic arch, built in Indo-Saracenic style, commemorating the arrival of King George V and Queen Mary in 1911.</p>
+                    <a href="GATE.html">Explore</a>
+                </div>
+                <div class="monument-card">
+                    <img src="https://sacredsites.com/images/asia/india/golden_temple_1200.jpg" alt="GOLDEN TEMPLE">
+                    <h3>GOLDEN TEMPLE</h3>
+                    <p>Situated in Amritsar, Punjab, India, the Golden Temple is a renowned Sikh gurudwara, celebrated for its stunning golden façade, serene water body (Amrit Sarovar), and its spiritual significance as a symbol of equality and humility.</p>
+                    <a href="GOLDEN.html">Explore</a>
+                </div>
+                <div class="monument-card">
+                    <img src="https://res.cloudinary.com/dyiffrkzh/image/upload/c_fill,f_auto,fl_progressive.strip_profile,g_center,h_400,q_auto,w_700/v1684310858/bbj/msard1r8d1gmybc3cogb.jpg" alt="VICTORIA TERMINUS">
+                    <h3>VICTORIA TERMINUS</h3>
+                    <p>Situated in Mumbai, India, the Victoria Terminus (now Chhatrapati Shivaji Maharaj Terminus) is a renowned UNESCO World Heritage site, celebrated for its Indo-Gothic architecture and significance as a historic railway station and architectural marvel.</p>
+                    <a href="VICTORIA.html">Explore</a>
+                </div>
+                <div class="monument-card">
+                    <img src="https://images.cnbctv18.com/wp-content/uploads/2022/08/Agra-Fort.jpg?impolicy=website&width=1200&height=900" alt="AGRA FORT">
+                    <h3>AGRA FORT</h3>
+                    <p>Situated in Agra, Uttar Pradesh, India, Agra Fort is a renowned UNESCO World Heritage site, celebrated for its grand Mughal architecture, massive red sandstone walls, and historical significance as a royal residence and military stronghold.</p>
+                    <a href="AGRA.html">Explore</a>
+                </div>
+                <div class="monument-card">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/99/ae/7f/images-14-largejpg.jpg?w=700&h=400&s=1" alt="MEHRANGARH FORT">
+                    <h3>MEHRANGARH FORT</h3>
+                    <p>Situated in Madhya Pradesh, India, this ancient Buddhist monument is renowned for its serene dome and intricately carved gateways.</p>
+                    <a href="FORT.html">Explore</a>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="about">
+            <h2>About Us</h2>
+            <p>Luminari is more than just a platform—it is a journey through the vibrant history and culture of India. Our mission is to bridge the gap between the past and present by providing a deep dive into the rich heritage, monuments, and stories that have shaped India's cultural landscape over centuries. India is home to an unparalleled collection of architectural wonders and historical landmarks that tell stories of a glorious past. From the majestic Taj Mahal to the intricately carved temples of Khajuraho, every monument has a story, a legend, and a significance that goes beyond its physical beauty. Luminari is committed to uncovering and preserving these stories, making them accessible to everyone, everywhere.</p>
+            <h3>Our Vision</h3>
+            <p>Our vision is to create a platform that not only showcases India's magnificent monuments but also educates and inspires people to appreciate the historical, cultural, and artistic value of these landmarks. We strive to create an immersive experience that ignites curiosity, fosters learning, and sparks a sense of pride in India's rich heritage.</p>
+            <h3>Why Cultural Preservation Matters</h3>
+            <p>Cultural preservation is not just about maintaining old buildings—it's about safeguarding the stories, traditions, and craftsmanship that have been passed down through generations. In a rapidly changing world, it is essential to preserve these legacies for future generations. By celebrating the monuments of India, we aim to raise awareness about the importance of conservation and the need to protect these treasures that form the foundation of our collective identity.</p>
+            <h3>Our Commitment to You</h3>
+            <p>At Luminari, we believe in providing a seamless and interactive learning experience. Whether you're a student, a teacher, a traveler, or simply someone with an interest in history, our platform is designed to offer you a wealth of knowledge in a format that is engaging and easy to explore. From virtual tours and detailed articles to 3D models and in-depth historical analyses, we are committed to offering a variety of tools that cater to every type of learner. Our interactive features allow users to explore monuments in new and exciting ways, making learning about history fun and immersive.</p>
+            <h3>Join Us in Our Journey</h3>
+            <p>We invite you to join us on this exciting journey as we continue to uncover the hidden gems of India’s cultural heritage. Whether you are looking to explore India's monumental past or want to learn more about the rich history that has shaped modern India, Luminari is your gateway to discovery.</p>
+            <p>Let's explore, learn, and preserve the wonders of the past together!</p>
+        </section>
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Whether you have a question, a suggestion, or simply want to learn more about India’s monuments and cultural heritage, our team is here to help. Get in touch with us through any of the following methods, and we’ll get back to you as soon as possible.</p>
+            <h3>Our Location</h3>
+            <p>We are located in the heart of India, but our platform is global, and we’re always just a click away. Whether you're exploring our site from across the street or across the world, we are happy to connect with you!</p>
+            <div class="contact-info">
+                <ul>
+                    <li><strong>Office Address:</strong> 15, Cultural Heritage Road, New Delhi, India</li>
+                    <li><strong>Phone:</strong> +91 123 456 7890</li>
+                    <li><strong>Email:</strong> <a href="mailto:info@luminari.com">info@luminari.com</a></li>
+                </ul>
+            </div>
+            <h3>Connect with Us</h3>
+            <p>We’re more than just an educational platform—we’re a community of history enthusiasts, educators, and culture lovers. Join the conversation on social media to stay updated on the latest news, events, and exciting new features!</p>
+            <div class="social-links">
+                <a href="https://facebook.com/luminari" target="_blank" class="social-icon">Facebook</a>
+                <a href="https://twitter.com/luminari" target="_blank" class="social-icon">Twitter</a>
+                <a href="https://instagram.com/luminari" target="_blank" class="social-icon">Instagram</a>
+                <a href="https://linkedin.com/company/luminari" target="_blank" class="social-icon">LinkedIn</a>
+            </div>
+            <h3>Office Hours</h3>
+            <p>We’re here to assist you Monday through Friday, and we try our best to respond to emails and messages promptly.</p>
+            <ul>
+                <li><strong>Monday to Friday:</strong> 9:00 AM - 6:00 PM (IST)</li>
+                <li><strong>Saturday:</strong> 10:00 AM - 2:00 PM (IST)</li>
+                <li><strong>Sunday:</strong> Closed</li>
+            </ul>
+        </section>
+        <footer>
+            <p>&copy; 2024 Luminari. All rights reserved.</p>
+        </footer>
+        <script>
+            document.getElementById("home-button").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent default action (page reload)
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top smoothly
+});
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+        document.addEventListener("DOMContentLoaded", () => {
+            const logoutButton = document.getElementById("logout-button");
+            logoutButton.addEventListener("click", () => {
+                window.location.href = "login.html";
+            });
+        });
+        </script>
+        </body>
+        </html>
