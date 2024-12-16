@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rani ki Vav - Explore the World Heritage Site in Patan</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 1); 
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            backdrop-filter: blur(10px); 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 15px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, opacity 0.3s ease;
+            border: 2px solid transparent;
+        }
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+        }
+        header {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('https://curiosmos.com/wp-content/uploads/2019/05/Rani-ki-vav-an-stepwell-on-the-banks-of-Saraswati-River-in-Patan.-A-UNESCO-world-heritage-site-in-Gujarat-India.jpg') no-repeat center center / cover;
+            color: white;
+            text-align: center;
+            padding: 20px 20px 30px;
+            height: 100vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-top: 60px;
+        }
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        header p {
+            font-size: 1.5rem;
+            margin: 15px 0 30px;
+            font-style: italic;
+        }
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px;
+        }
+        .gallery, .about {
+            width: 48%;
+            transition: filter 0.5s ease, opacity 0.5s ease;
+        }
+        .blurred {
+            filter: blur(5px);
+            opacity: 0.6;
+        }
+        .carousel {
+            display: flex;
+            align-items: center;
+            position: relative;
+            max-width: 100%;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            height: 400;
+        }
+        .carousel img {
+            display: block;
+            width: 100%;
+            height: 400;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel img.hidden {
+            display: none;
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-buttons button {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+        .carousel-buttons button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .content h2 {
+            margin-top: 0;
+            color: #6c63ff;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        .content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 20px 0;
+            text-align: justify;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #000; 
+            color: white;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#gallery" id="gallery-link">Gallery</a>
+        <a href="#about" id="about-link">About</a>
+    </nav>
+    <header>
+        <h1>Rani ki Vav</h1>
+        <p>Explore the stunning 11th-century stepwell renowned for its intricate carvings</p>
+    </header>
+    <div class="content-container">
+        <div class="gallery" id="gallery-section">
+            <section id="carousel" class="carousel">
+                <img src="https://live.staticflickr.com/3853/14919362861_ca1bfbff63_b.jpg" alt="Ranikivav_view" class="active">
+                <img src="https://www.gujarattourism.com/content/dam/gujrattourism/images/heritage-sites/rani-ki-vav/Rani-Ki-Vav-1.jpg" alt="Rani_ki_vav-close_View" class="hidden">
+                <img src="https://i.pinimg.com/originals/69/4d/24/694d241d62dcba894064d3d4d3a1fe17.jpg" alt="Ranikivav_top" class="hidden">
+                <img src="https://www.earthismysterious.com/wp-content/uploads/2020/03/Rani-ki-Vav-min.jpg" alt="Ranikivav_piller" class="hidden">
+                <img src="https://images.nativeplanet.com/hi/img/2024/01/ranikivav7-1704462067.jpg" alt="Rani_ki_vav_inner-view" class="hidden">
+                <img src="https://www.adotrip.com/public/images/areas/master_images/63848e805385a-Rani_ki_vav_Attractions.jpg" alt="Ranikivav_longview" class="hidden">
+                <div class="carousel-buttons">
+                    <button id="prev">&lt;</button>
+                    <button id="next">&gt;</button>
+                </div>
+            </section>
+        </div>
+        <div class="about" id="about-section">
+            <h2>About the Rani ki Vav</h2>
+            <p>
+                Rani ki Vav, located in <strong>Patan</strong>, Gujarat, is an <strong>11th-century stepwell</strong> and a <strong>UNESCO World Heritage site</strong>, celebrated for its <strong>architectural grandeur</strong>, <strong>intricate carvings</strong>, and <strong>historical significance</strong>. Commissioned by <strong>Queen Udayamati</strong> in memory of her husband, <strong>King Bhimdev I</strong> of the <strong>Solanki dynasty</strong>, the stepwell is a remarkable example of ancient <strong>Indian engineering</strong> and <strong>artistic craftsmanship</strong>. The structure descends <strong>seven stories</strong> (though only five are visible today) and was designed to <strong>store water</strong> during <strong>Gujarat's dry seasons</strong>, serving both <strong>practical</strong> and <strong>symbolic purposes</strong>. The vav is adorned with over <strong>500 principal sculptures</strong> and over <strong>1,000 minor sculptures</strong>, featuring depictions of <strong>Hindu deities</strong> like <strong>Vishnu</strong>, <strong>Shiva</strong>, <strong>Lakshmi</strong>, <strong>Saraswati</strong>, and <strong>Ganesh</strong>, as well as scenes from the <strong>Mahabharata</strong>, <strong>Ramayana</strong>, and other <strong>mythological tales</strong>. The carvings are set in <strong>alcoves</strong> along the walls, creating a visually stunning and spiritually significant atmosphere. The stepwell’s design is a unique <strong>inverted temple tower</strong>, demonstrating advanced <strong>hydraulic engineering</strong> and sophisticated <strong>geometrical planning</strong>. Originally buried under silt due to <strong>floods</strong> from the nearby <strong>Saraswati River</strong>, Rani ki Vav was rediscovered in the <strong>1940s</strong> and subsequently restored by the <strong>Archaeological Survey of India (ASI)</strong>. It is now recognized not only for its <strong>engineering ingenuity</strong> but also as a symbol of Gujarat's <strong>cultural</strong> and <strong>artistic heritage</strong>. The site attracts <strong>tourists</strong> from around the world, who come to admire its stunning sculptures, serene atmosphere, and historical importance.
+            </p>
+                 
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Rani ki Vav Tourism. | <a href="#top">Back to Top</a> | <a href="index.html#monuments-gallery">Back to Monument Gallery</a></p>
+    </footer>
+    <script>
+        const galleryLink = document.getElementById('gallery-link');
+        const aboutLink = document.getElementById('about-link');
+        const gallerySection = document.getElementById('gallery-section');
+        const aboutSection = document.getElementById('about-section');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const images = document.querySelectorAll('.carousel img');
+        let currentIndex = 0;
+        function showGallery() {
+            gallerySection.classList.remove('blurred');
+            aboutSection.classList.add('blurred');
+        }
+        function showAbout() {
+            aboutSection.classList.remove('blurred');
+            gallerySection.classList.add('blurred');
+        }
+        galleryLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            showGallery();
+            gallerySection.scrollIntoView({ behavior: 'smooth' }); 
+        });
+        aboutLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            showAbout();
+            aboutSection.scrollIntoView({ behavior: 'smooth' }); 
+        });
+        function changeImage(direction) {
+            images[currentIndex].classList.add('hidden');
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            images[currentIndex].classList.remove('hidden');
+        }
+        prevButton.addEventListener('click', () => {
+            changeImage(-1);
+        });
+        nextButton.addEventListener('click', () => {
+            changeImage(1);
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === '<' || event.key === 'ArrowLeft') {
+                changeImage(-1);
+            } else if (event.key === '>' || event.key === 'ArrowRight') {
+                changeImage(1);
+            }
+        });
+        showGallery();
+    </script>
+</body>
+</html>
