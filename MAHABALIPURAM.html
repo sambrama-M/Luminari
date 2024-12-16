@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mahabalipuram - A Timeless Marvel of Ancient Architecture</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 1); 
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            backdrop-filter: blur(10px); 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 15px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, opacity 0.3s ease;
+            border: 2px solid transparent;
+        }
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+        }
+        header {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Seashore_Temple_at_Mahabalipuram_during_Mansoon_Time.jpg/1280px-Seashore_Temple_at_Mahabalipuram_during_Mansoon_Time.jpg') no-repeat center center / cover;
+            color: white;
+            text-align: center;
+            padding: 20px 20px 30px;
+            height: 100vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-top: 60px;
+        }
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        header p {
+            font-size: 1.5rem;
+            margin: 15px 0 30px;
+            font-style: italic;
+        }
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px;
+        }
+        .gallery, .about {
+            width: 48%;
+            transition: filter 0.5s ease, opacity 0.5s ease;
+        }
+        .blurred {
+            filter: blur(5px);
+            opacity: 0.6;
+        }
+        .carousel {
+            display: flex;
+            align-items: center;
+            position: relative;
+            max-width: 100%;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            height: 400;
+        }
+        .carousel img {
+            display: block;
+            width: 100%;
+            height: 400;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel img.hidden {
+            display: none;
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-buttons button {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+        .carousel-buttons button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .content h2 {
+            margin-top: 0;
+            color: #6c63ff;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        .content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 20px 0;
+            text-align: justify;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #000; 
+            color: white;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#gallery" id="gallery-link">Gallery</a>
+        <a href="#about" id="about-link">About</a>
+    </nav>
+    <header>
+        <h1>Mahabalipuram</h1>
+        <p>A Timeless Marvel of Ancient Architecture</p>
+    </header>
+    <div class="content-container">
+        <div class="gallery" id="gallery-section">
+            <section id="carousel" class="carousel">
+                <img src="https://cdn.britannica.com/93/74093-050-908E4B55/Shore-Temple-Mamallapuram-Tamil-Nadu-India.jpg" alt="Mahabalipuram-view1" class="active">
+                <img src="https://www.travelure.in/wp-content/uploads/2018/12/Shore-Temple-for-Blog-Header-1.jpg" alt="Mahabalipuram-view2" class="hidden">
+                <img src="https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/mahabalipuram-1654870108_c538505993052d39e713.webp" alt="Mahabalipuram-view3" class="hidden">
+                <img src="https://media.assettype.com/outlooktraveller%2Fimport%2Foutlooktraveller%2Fpublic%2Fuploads%2Farticles%2Fexplore%2FShore_Temple_Mahabalipuram_.jpg?w=1024&auto=format%2Ccompress&fit=max" alt="Mahabalipuram-view4" class="hidden">
+                <img src="https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/mamallapuram-shore-temple-1653384258_d88d3d01bc1bbf48db9b.webp" alt="Mahabalipuram-view5" class="hidden">
+                <img src="https://www.the-golden-chariot.com/wp-content/uploads/2013/08/Mahabalipuram-shore-temple.jpg" alt="Mahabalipuram-view6" class="hidden">
+                <div class="carousel-buttons">
+                    <button id="prev">&lt;</button>
+                    <button id="next">&gt;</button>
+                </div>
+            </section>
+        </div>
+        <div class="about" id="about-section">
+            <h2>About the Mahabalipuram</h2>
+            <p><strong>Mahabalipuram</strong>, also known as <strong>Mamallapuram</strong>, is a historic coastal town in <strong>Tamil Nadu</strong>, India, celebrated for its remarkable <strong>rock-cut temples</strong> and <strong>monolithic sculptures</strong> dating back to the 7th and 8th centuries. Founded by the <strong>Pallava dynasty</strong>, the town flourished under King <strong>Narasimhavarman I</strong>, known as <strong>Mamalla</strong>. It is renowned for its iconic <strong>UNESCO World Heritage Sites</strong>, including the <strong>Shore Temple</strong>, a striking structure overlooking the <strong>Bay of Bengal</strong>, dedicated to <strong>Lord Shiva</strong>. The <strong>Pancha Rathas</strong> (Five Rathas) are another highlight, consisting of five <strong>monolithic temples</strong> carved from a single rock, each with unique architectural styles. One of the most famous attractions is the <strong>Descent of the Ganges</strong> (or <strong>Arjuna’s Penance</strong>), a massive <strong>bas-relief</strong> that depicts the legendary descent of the <strong>Ganges River</strong> and various <strong>mythological scenes</strong>. Mahabalipuram also features several <strong>cave temples</strong>, such as the <strong>Varaha Cave</strong>, showcasing intricate carvings of <strong>gods</strong> and religious figures. The town is a masterpiece of <strong>Pallava architecture</strong>, reflecting the dynasty's devotion to <strong>art</strong> and <strong>religion</strong>. Its monuments continue to draw visitors from around the world, offering insight into ancient <strong>Indian craftsmanship</strong>, <strong>cultural heritage</strong>, and religious symbolism. With its historical significance as a key <strong>port</strong> and its architectural brilliance, Mahabalipuram remains a significant cultural landmark in India, attracting tourists, historians, and art enthusiasts alike.</p>
+        </div>
+    </div>
+    <footer>Mahabalipuram Tourism. | <a href="#top">Back to Top</a> | <a href="index.html#monuments-gallery">Back to Monument Gallery</a></p>
+    </footer>
+    <script>
+        const galleryLink = document.getElementById('gallery-link');
+        const aboutLink = document.getElementById('about-link');
+        const gallerySection = document.getElementById('gallery-section');
+        const aboutSection = document.getElementById('about-section');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const images = document.querySelectorAll('.carousel img');
+        let currentIndex = 0;
+        function showGallery() {
+            gallerySection.classList.remove('blurred');
+            aboutSection.classList.add('blurred');
+        }
+        function showAbout() {
+            aboutSection.classList.remove('blurred');
+            gallerySection.classList.add('blurred');
+        }
+        galleryLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            showGallery();
+            gallerySection.scrollIntoView({ behavior: 'smooth' }); 
+        });
+        aboutLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            showAbout();
+            aboutSection.scrollIntoView({ behavior: 'smooth' }); 
+        });
+        function changeImage(direction) {
+            images[currentIndex].classList.add('hidden');
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            images[currentIndex].classList.remove('hidden');
+        }
+        prevButton.addEventListener('click', () => {
+            changeImage(-1);
+        });
+        nextButton.addEventListener('click', () => {
+            changeImage(1);
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === '<' || event.key === 'ArrowLeft') {
+                changeImage(-1);
+            } else if (event.key === '>' || event.key === 'ArrowRight') {
+                changeImage(1);
+            }
+        });
+        showGallery();
+    </script>
+</body>
+</html>
