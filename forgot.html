@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login - Luminari</title>
+    <title>Forgot Password - Luminari</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://storage.needpix.com/rsynced_images/abstract-3557681_1280.jpg'); /* Replace with your background image URL */
+            background-image: url('https://www.trcnyc.org/wp-content/uploads/2018/02/11-abstract-texture-textures-form.jpg'); 
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -22,10 +21,10 @@
             backdrop-filter: brightness(0.8); 
         }
         .container {
-            background-color: rgba(255, 255, 255, 0.9); 
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(10, 10, 10, 0.963);
             width: 100%;
             max-width: 400px;
             text-align: center;
@@ -33,7 +32,7 @@
         }
         .container h2 {
             margin-bottom: 15px;
-            color: #7140d9;
+            color: #513bd0d0;
             font-size: 1.8rem;
         }
         .container p {
@@ -56,14 +55,13 @@
             width: 100%;
             padding: 12px;
             font-size: 14px;
-            border: 1px solid #ccc;
+            border: 1px solid #b4b4b0;
             border-radius: 8px;
             outline: none;
             transition: border 0.3s;
         }
-
         .form-group input:focus {
-            border-color: #6a46ec;
+            border-color: #7b31c9;
         }
         .btn {
             display: block;
@@ -71,7 +69,7 @@
             padding: 12px;
             font-size: 16px;
             font-weight: bold;
-            color: #fff;
+            color: #f5f1f1;
             background-color: #762dd0;
             border: none;
             border-radius: 8px;
@@ -81,17 +79,17 @@
         .btn:hover {
             background-color: hsl(267, 75%, 60%);
         }
-        .signup-link {
+        .login-link {
             margin-top: 15px;
             font-size: 0.9rem;
             color: #555;
         }
-        .signup-link a {
-            color: #6c63ff;
+        .login-link a {
+            color: #7140d9;
             text-decoration: none;
             font-weight: bold;
         }
-        .signup-link a:hover {
+        .login-link a:hover {
             color: #8a70ff;
         }
         @media (max-width: 480px) {
@@ -103,63 +101,49 @@
 </head>
 <body>
     <div class="container">
-        <h2>Welcome Back</h2>
-        <p>Please log in to continue exploring Luminari.</p>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Enter your username" required>
-            </div>
+        <h2>Forgot Password</h2>
+        <p>Reset your password to regain access to your account.</p>
+        <form id="forgotPasswordForm">
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="Enter your email" required>
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password" required>
+                <label for="newPassword">New Password</label>
+                <input type="password" id="newPassword" placeholder="Enter your new password" required>
             </div>
-            <button type="submit" class="btn">Login</button>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm your new password" required>
+            </div>
+            <button type="submit" class="btn">Reset Password</button>
         </form>
-        <div class="signup-link">
-            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
-        </div>
-        <div class="forgotpassword-link">
-            <p>Forgot password? <a href="forgot.html">Reset password</a></p>
+        <div class="login-link">
+            <p>Remembered your password? <a href="login.html">Login</a></p>
         </div>
     </div>
     <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
+        document.getElementById("forgotPasswordForm").addEventListener("submit", function(event) {
             event.preventDefault();
-            const username = document.getElementById("username").value;
             const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            if (!username) {
-                alert("Please enter your username.");
-                return;
-            }
-            const usernameRegex = /^[a-zA-Z0-9_]+$/; 
-            if (!usernameRegex.test(username)) {
-                alert("Please enter a valid username (letters, numbers, and underscores only).");
-                return;
-            }
+            const newPassword = document.getElementById("newPassword").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
             const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-            if (!email) {
-                alert("Please enter your email.");
-                return;
-            } else if (!emailRegex.test(email)) {
+            if (!emailRegex.test(email)) {
                 alert("Please enter a valid email address.");
                 return;
             }
-            if (!password) {
-                alert("Please enter your password.");
-                return;
-            } else if (password.length < 8) {
+            if (newPassword.length < 8) {
                 alert("Password must be at least 8 characters long.");
                 return;
             }
-            alert("Login successful!");
-            localStorage.setItem("loggedIn", "true");
-            window.location.href = "index.html"; 
+            if (newPassword !== confirmPassword) {
+                alert("Passwords do not match.");
+                return;
+            }
+            alert("Password reset successful!");
+            window.location.href = "login.html"; 
         });
     </script>
 </body>
