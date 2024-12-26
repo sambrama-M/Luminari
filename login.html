@@ -33,21 +33,25 @@
             top: 0;
             z-index: 1000;
         }
+
         .navbar .logo {
             display: flex;
             align-items: center;
             gap: 10px;
         }
+
         .navbar .logo img {
             width: 50px;
             height: 50px;
         }
+
         .navbar .logo h1 {
             font-size: 1.8rem;
             color: #fff;
             margin: 0;
             white-space: nowrap;
         }
+
         .navbar .nav-buttons a {
             padding: 10px 20px;
             color: #fff;
@@ -290,7 +294,8 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" placeholder="Enter your password" required>
                 </div>
-                <button type="submit" class="btn">Login</button>
+                <a href="index.html" class="btn">Login</a>
+
             </form>
             <div class="signup-link">
                 <p><span class="black-text">Don't have an account?</span> <a href="signup.html" class="link">Sign Up</a></p>
@@ -355,6 +360,13 @@
         });
     });
 });
+function redirectToIndex(event) {
+        // Prevent form submission to allow redirection
+        event.preventDefault();
+
+        // Redirect to index.html
+        window.location.href = "index.html";
+    }
 
 </script>
 </body>
