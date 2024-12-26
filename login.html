@@ -3,55 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login - Luminari</title>
     <style>
+        /* General Body Styles */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://storage.needpix.com/rsynced_images/abstract-3557681_1280.jpg'); /* Replace with your background image URL */
+            background-image: url('https://storage.needpix.com/rsynced_images/abstract-3557681_1280.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            color: #333;
+            box-sizing: border-box;
+            color: #f1efef;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
             min-height: 100vh;
-            backdrop-filter: brightness(0.8); 
+            min-width: 10px;
         }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar .logo img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .navbar .logo h1 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .navbar .nav-buttons a {
+            padding: 10px 20px;
+            color: #fff;
+            background: #6c63ff;
+            text-decoration: none;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        /* Main Container */
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+            flex-grow: 1;
+            height: 100%;
+            gap: 20 vcpx;
+        }
+
+        /* Left Section */
+        .left-section {
+            flex: 1;
+            padding: 20px;
+            max-width: 1000px;
+        }
+
+        .left-section h1 {
+            font-size: 2rem;
+            color: #b786f4;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .left-section h3 {
+            
+            color: #f2f3f4;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .left-section p {
+            font-family: 'Merriweather', serif;
+            font-size: 1.15rem;
+            font-weight: semi bold;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #f4f4f4;
+            max-width: 900px;
+        }
+
+        .left-section a {
+            color: #762dd0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .left-section a:hover {
+            text-decoration: underline;
+        }
+
+        /* Login Form */
         .container {
-            background-color: rgba(255, 255, 255, 0.9); 
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             width: 100%;
             max-width: 400px;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
         }
+
         .container h2 {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             color: #7140d9;
-            font-size: 1.8rem;
         }
-        .container p {
-            margin: 10px 0 20px;
-            font-size: 1rem;
-            color: #555;
-        }
+
         .form-group {
             margin-bottom: 20px;
-            position: relative;
             text-align: left;
         }
+
         .form-group label {
             display: block;
             font-size: 14px;
             color: #333;
             margin-bottom: 5px;
         }
+
         .form-group input {
             width: 100%;
             padding: 12px;
@@ -59,12 +149,8 @@
             border: 1px solid #ccc;
             border-radius: 8px;
             outline: none;
-            transition: border 0.3s;
         }
 
-        .form-group input:focus {
-            border-color: #6a46ec;
-        }
         .btn {
             display: block;
             width: 100%;
@@ -76,91 +162,204 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            transition: background 0.3s;
         }
+
         .btn:hover {
             background-color: hsl(267, 75%, 60%);
         }
-        .signup-link {
+
+        .link {
             margin-top: 15px;
-            font-size: 0.9rem;
-            color: #555;
-        }
-        .signup-link a {
-            color: #6c63ff;
+            color: #802ad0;
             text-decoration: none;
-            font-weight: bold;
+            font-size: 0.9rem;
         }
-        .signup-link a:hover {
-            color: #8a70ff;
+
+        .link:hover {
+            text-decoration: underline;
         }
-        @media (max-width: 480px) {
-            .container {
-                padding: 20px;
+
+        .black-text {
+            color: #000;
+        }
+        /* About Section */ 
+        .about-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+        .about { 
+            flex: 1;
+            background-color: rgba(6, 6, 6, 0.511); 
+            color: #f4f4f4; 
+            padding: 50px 20px;
+            text-align: left; 
+            box-sizing: border-box;
+            margin-top: 50px;
+            border-radius: 10px;
+            max-width: 90%
+         } 
+         .about h2, .about h3 { 
+            color: #7140d9; 
+        } 
+        .about p {
+             font-size: 1rem; 
+             line-height: 1.6; 
+            }
+        .contact-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            }
+        .contact {
+            flex: 1;
+            background-color: rgba(3, 3, 3, 0.511); 
+            color: #f4f4f4; 
+            padding: 50px 20px;
+            text-align: left; 
+            box-sizing: border-box;
+            margin-top: 50px;
+            border-radius: 10px;
+            max-width: 90%
+        }
+        .contact h2, .contact h3 {
+            color: #7140d9; 
+        }
+           
+        .contact p {
+            font-size: 1.2rem;
+            color: #f4f4f4;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+            }
+
+            .left-section {
+                width: 100%;
+                max-width: none;
+                margin-bottom: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Welcome Back</h2>
-        <p>Please log in to continue exploring Luminari.</p>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Enter your username" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password" required>
-            </div>
-            <button type="submit" class="btn">Login</button>
-        </form>
-        <div class="signup-link">
-            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="logo.svg" alt="Luminari Logo">
+            <h1>Luminari</h1>
         </div>
-        <div class="forgotpassword-link">
-            <p>Forgot password? <a href="forgot.html">Reset password</a></p>
+        <div class="nav-buttons">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
         </div>
     </div>
-    <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const username = document.getElementById("username").value;
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            if (!username) {
-                alert("Please enter your username.");
-                return;
-            }
-            const usernameRegex = /^[a-zA-Z0-9_]+$/; 
-            if (!usernameRegex.test(username)) {
-                alert("Please enter a valid username (letters, numbers, and underscores only).");
-                return;
-            }
-            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-            if (!email) {
-                alert("Please enter your email.");
-                return;
-            } else if (!emailRegex.test(email)) {
-                alert("Please enter a valid email address.");
-                return;
-            }
-            if (!password) {
-                alert("Please enter your password.");
-                return;
-            } else if (password.length < 8) {
-                alert("Password must be at least 8 characters long.");
-                return;
-            }
-            alert("Login successful!");
-            localStorage.setItem("loggedIn", "true");
-            window.location.href = "index.html"; 
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Left Section -->
+        <div class="left-section">
+            
+            <section id="home" class="home">
+            <header><h1>Welcome to Luminari, the platform where innovation meets creativity. Dive in to explore a world of endless possibilities.</h1></header>
+                    <p>Luminari is a dedicated educational platform designed to bring the wonders of the world's monuments right to your screen. Our mission is to provide a comprehensive and engaging learning experience that delves into the rich history, architectural brilliance, and cultural significance of monuments from around the globe. Whether you're a history buff, a student, or just curious, Luminari offers detailed insights and fascinating stories about each landmark.</p>
+                    <p>With a diverse collection of monuments, Luminari aims to inspire and educate visitors about the profound legacy these structures hold. From ancient wonders to modern marvels, our platform covers a wide array of sites that have shaped human civilization.</p>
+                    <p>Join us in exploring the majestic beauty and historical importance of these incredible monuments. At Luminari, learning is a journey—one that takes you through time and across continents, all from the comfort of your home.</p>
+            </section>
+        </div>
+
+        <!-- Login Form -->
+        <div class="container">
+            <h2>Welcome Back</h2>
+            <p>Please log in to continue exploring Luminari.</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <div class="signup-link">
+                <p><span class="black-text">Don't have an account?</span> <a href="signup.html" class="link">Sign Up</a></p>
+            </div>
+            <div class="forgotpassword-link">
+                <p><span class="black-text">Forgot password?</span> <a href="forgot.html" class="link">Reset password</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="about-wrapper">
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>Luminari is more than just a platform—it is a journey through the vibrant history and culture of India. Our mission is to bridge the gap between the past and present by providing a deep dive into the rich heritage, monuments, and stories that have shaped India's cultural landscape over centuries. India is home to an unparalleled collection of architectural wonders and historical landmarks that tell stories of a glorious past. From the majestic Taj Mahal to the intricately carved temples of Khajuraho, every monument has a story, a legend, and a significance that goes beyond its physical beauty. Luminari is committed to uncovering and preserving these stories, making them accessible to everyone, everywhere.</p>
+        <h3>Our Vision</h3>
+        <p>Our vision is to create a platform that not only showcases India's magnificent monuments but also educates and inspires people to appreciate the historical, cultural, and artistic value of these landmarks. We strive to create an immersive experience that ignites curiosity, fosters learning, and sparks a sense of pride in India's rich heritage.</p>
+        <h3>Why Cultural Preservation Matters</h3>
+        <p>Cultural preservation is not just about maintaining old buildings—it's about safeguarding the stories, traditions, and craftsmanship that have been passed down through generations. In a rapidly changing world, it is essential to preserve these legacies for future generations. By celebrating the monuments of India, we aim to raise awareness about the importance of conservation and the need to protect these treasures that form the foundation of our collective identity.</p>
+        <h3>Our Commitment to You</h3>
+        <p>At Luminari, we believe in providing a seamless and interactive learning experience. Whether you're a student, a teacher, a traveler, or simply someone with an interest in history, our platform is designed to offer you a wealth of knowledge in a format that is engaging and easy to explore. From virtual tours and detailed articles to 3D models and in-depth historical analyses, we are committed to offering a variety of tools that cater to every type of learner. Our interactive features allow users to explore monuments in new and exciting ways, making learning about history fun and immersive.</p>
+        <h3>Join Us in Our Journey</h3>
+        <p>We invite you to join us on this exciting journey as we continue to uncover the hidden gems of India’s cultural heritage. Whether you are looking to explore India's monumental past or want to learn more about the rich history that has shaped modern India, Luminari is your gateway to discovery.</p>
+        <p>Let's explore, learn, and preserve the wonders of the past together!</p>
+    </section>
+    </div>
+    <div class="contact-wrapper">
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you! Whether you have a question, a suggestion, or simply want to learn more about India’s monuments and cultural heritage, our team is here to help. Get in touch with us through any of the following methods, and we’ll get back to you as soon as possible.</p>
+        <h3>Our Location</h3>
+        <p>We are located in the heart of India, but our platform is global, and we’re always just a click away. Whether you're exploring our site from across the street or across the world, we are happy to connect with you!</p>
+        <div class="contact-info">
+            <ul>
+                <li><strong>Office Address:</strong> 15, Cultural Heritage Road, New Delhi, India</li>
+                <li><strong>Phone:</strong> +91 123 456 7890</li>
+                <li><strong>Email:</strong> <a href="mailto:info@luminari.com">info@luminari.com</a></li>
+            </ul>
+        </div>
+        <h3>Connect with Us</h3>
+            <p>We’re more than just an educational platform—we’re a community of history enthusiasts, educators, and culture lovers. Join the conversation on social media to stay updated on the latest news, events, and exciting new features!</p>
+            <div class="social-links">
+                <a href="https://facebook.com/luminari" target="_blank" class="social-icon">Facebook</a>
+                <a href="https://twitter.com/luminari" target="_blank" class="social-icon">Twitter</a>
+                <a href="https://instagram.com/luminari" target="_blank" class="social-icon">Instagram</a>
+                <a href="https://linkedin.com/company/luminari" target="_blank" class="social-icon">LinkedIn</a>
+            </div>
+            <h3>Office Hours</h3>
+            <p>We’re here to assist you Monday through Friday, and we try our best to respond to emails and messages promptly.</p>
+            <ul>
+                <li><strong>Monday to Friday:</strong> 9:00 AM - 6:00 PM (IST)</li>
+                <li><strong>Saturday:</strong> 10:00 AM - 2:00 PM (IST)</li>
+                <li><strong>Sunday:</strong> Closed</li>
+            </ul>
+        </section>
+        </div>
+        <script>
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
         });
-    </script>
+    });
+});
+
+</script>
 </body>
 </html>

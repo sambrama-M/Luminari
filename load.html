@@ -18,6 +18,15 @@
       overflow: hidden; /* Prevent scroll during loading */
     }
 
+    /* Center container for loader and text */
+    .center-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
     /* Styling for the loader container */
     .loader-container {
       text-align: center;
@@ -30,8 +39,12 @@
     .logo {
       width: 100%;
       max-width: 200px;
-      position: relative;
-      z-index: 10;
+      opacity: 0; /* Initially hidden */
+      transition: opacity 1s ease-in; /* Smooth fade-in */
+    }
+
+    .logo.show {
+      opacity: 1; /* Fully visible */
     }
 
     /* Triangle rotating animation */
@@ -103,36 +116,41 @@
   </style>
 </head>
 <body>
-  <div class="loader-container">
-    <!-- Triangular rotating elements -->
-    <div class="triangle"></div>
-    <div class="triangle"></div>
-    <div class="triangle"></div>
-    <div class="triangle"></div>
+  <div class="center-container">
+    <!-- Loader -->
+    <div class="loader-container" id="loader">
+      <div class="triangle"></div>
+      <div class="triangle"></div>
+      <div class="triangle"></div>
+      <div class="triangle"></div>
+    </div>
 
-    <!-- Loading logo from the logo.svg file -->
-    <img class="logo" src="logo.svg" alt="Luminari Logo">
+    <!-- Logo -->
+    <img class="logo" id="logo" src="logo.svg" alt="Luminari Logo">
+
+    <!-- Brand Name -->
+    <div class="brand-name" id="brand-name">Luminari</div>
   </div>
-
-  <!-- Brand Name (Luminari) -->
-  <div class="brand-name" id="brand-name">Luminari</div>
 
   <script>
     // Wait for the page to fully load before starting the animation
     window.onload = function() {
-      // Fade out the loader container after 3 seconds
+      // Step 1: Fade out the triangles after 3 seconds
       setTimeout(function() {
-        document.querySelector('.loader-container').classList.add('fade-out');
-        // Show the brand name and make it grow
-        document.getElementById('brand-name').classList.add('show');
-        
-        // Redirect to the homepage (index.html) after 4 seconds
+        document.getElementById('loader').classList.add('fade-out');
+
+        // Step 2: Show the logo and brand name after triangles disappear
         setTimeout(function() {
-          window.location.href = 'index.html'; // Redirect to homepage
-        }, 4000); // 4 seconds delay after brand name appears
-      }, 3000); // 3 seconds delay before fading out the loader
+          document.getElementById('logo').classList.add('show');
+          document.getElementById('brand-name').classList.add('show');
+        }, 1000); // Delay after loader fades out
+      }, 3000); // Loader animation duration
+
+      // Step 3: Redirect to the homepage after everything is visible
+      setTimeout(function() {
+        window.location.href = 'index.html'; // Redirect to homepage
+      }, 7000); // Total time: 3s for loader + 1s for fade-in + 3s display time
     };
   </script>
 </body>
 </html>
- 
