@@ -1,6 +1,6 @@
 # Luminari - Cultural Heritage Explorer
 
-Luminari is a web-based platform that allows users to explore historical monuments and cultural heritage sites from around the world. Through interactive 3D models and brief historical insights, users can learn about the significance of each site.
+Luminari is a web-based platform that allows users to explore historical monuments and cultural heritage sites from around the world. Through interactive view and brief historical insights, users can learn about the significance of each site.
 
 ## Technologies Used
 - HTML, CSS, JavaScript (Frontend)

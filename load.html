@@ -18,10 +18,22 @@
       overflow: hidden; /* Prevent scroll during loading */
     }
 
+    /* Center container for loader and text */
+    .center-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
     /* Styling for the loader container */
     .loader-container {
       text-align: center;
-      position: relative;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 200px;
       height: 200px;
     }
@@ -30,14 +42,18 @@
     .logo {
       width: 100%;
       max-width: 200px;
-      position: relative;
-      z-index: 10;
+      opacity: 0; /* Initially hidden */
+      transition: opacity 1s ease-in; /* Smooth fade-in */
+    }
+
+    .logo.show {
+      opacity: 1; /* Fully visible */
     }
 
     /* Triangle rotating animation */
     .triangle {
       position: absolute;
-      top: 0; 
+      top: 0;
       left: 0;
       width: 0;
       height: 0;
@@ -79,7 +95,7 @@
       100% { border-bottom-color: #ff0000; }  /* Red again */
     }
 
-    /* Fade-out effect after loading */
+    /* Fade-out effect for loader */
     .fade-out {
       opacity: 0;
       transition: opacity 1s ease;
@@ -91,14 +107,22 @@
       color: #fff;
       font-family: Arial, sans-serif;
       font-weight: bold;
-      margin-top: 30px;
+      margin-left: 20px; /* Adjust spacing between logo and brand name */
       opacity: 0; /* Start hidden */
       transition: font-size 1.5s ease, opacity 1s ease; /* Smooth transition for size and fade-in */
+      z-index: 5; /* Brand name appears above loader but below logo */
     }
 
     .brand-name.show {
       font-size: 60px; /* Final size */
       opacity: 1; /* Make it visible */
+    }
+
+    /* Container for logo and brand name side by side */
+    .logo-container {
+      display: flex;
+      align-items: center; /* Vertically align the logo and brand name */
+      justify-content: center; /* Horizontally center the content */
     }
   </style>
 </head>
@@ -109,30 +133,36 @@
     <div class="triangle"></div>
     <div class="triangle"></div>
     <div class="triangle"></div>
-
-    <!-- Loading logo from the logo.svg file -->
-    <img class="logo" src="logo.svg" alt="Luminari Logo">
   </div>
 
-  <!-- Brand Name (Luminari) -->
-  <div class="brand-name" id="brand-name">Luminari</div>
+  <!-- Container for logo and brand name -->
+  <div class="logo-container">
+    <!-- Loading logo from the logo.svg file -->
+    <img class="logo" src="logo.svg" alt="Luminari Logo" id="logo">
+
+    <!-- Brand Name (Luminari) -->
+    <div class="brand-name" id="brand-name">Luminari</div>
+  </div>
 
   <script>
     // Wait for the page to fully load before starting the animation
     window.onload = function() {
-      // Fade out the loader container after 3 seconds
+      // After 3 seconds, start fading out the triangles
       setTimeout(function() {
+        // Fade out the loader container (triangles)
         document.querySelector('.loader-container').classList.add('fade-out');
+        
         // Show the brand name and make it grow
         document.getElementById('brand-name').classList.add('show');
+        
+        // Logo stays visible, no change needed
         
         // Redirect to the homepage (index.html) after 4 seconds
         setTimeout(function() {
           window.location.href = 'index.html'; // Redirect to homepage
-        }, 4000); // 4 seconds delay after brand name appears
+        }, 3000); // 4 seconds delay after brand name appears
       }, 3000); // 3 seconds delay before fading out the loader
     };
   </script>
 </body>
 </html>
- 
