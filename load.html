@@ -127,46 +127,6 @@
   </style>
 </head>
 <body>
-<<<<<<< HEAD
-  <div class="center-container">
-    <!-- Loader -->
-    <div class="loader-container" id="loader">
-      <div class="triangle"></div>
-      <div class="triangle"></div>
-      <div class="triangle"></div>
-      <div class="triangle"></div>
-    </div>
-
-    <!-- Logo -->
-    <img class="logo" id="logo" src="logo.svg" alt="Luminari Logo">
-
-    <!-- Brand Name -->
-    <div class="brand-name" id="brand-name">Luminari</div>
-  </div>
-
-  <script>
-    // Wait for the page to fully load before starting the animation
-    window.onload = function() {
-      // Step 1: Fade out the triangles after 3 seconds
-      setTimeout(function() {
-        document.getElementById('loader').classList.add('fade-out');
-
-        // Step 2: Show the logo and brand name after triangles disappear
-        setTimeout(function() {
-          document.getElementById('logo').classList.add('show');
-          document.getElementById('brand-name').classList.add('show');
-        }, 1000); // Delay after loader fades out
-      }, 3000); // Loader animation duration
-
-      // Step 3: Redirect to the homepage after everything is visible
-      setTimeout(function() {
-        window.location.href = 'index.html'; // Redirect to homepage
-      }, 7000); // Total time: 3s for loader + 1s for fade-in + 3s display time
-    };
-  </script>
-</body>
-</html>
-=======
   <div class="loader-container">
     <!-- Triangular rotating elements -->
     <div class="triangle"></div>
@@ -206,4 +166,3 @@
   </script>
 </body>
 </html>
->>>>>>> eacbab350078226a6d7caee2728dfe2dee602126
