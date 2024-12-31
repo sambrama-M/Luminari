@@ -119,19 +119,25 @@
             background-color: rgba(255, 255, 255, 0.9);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(10, 10, 10, 0.963);
             width: 100%;
             max-width: 400px;
             text-align: center;
+            align-items: center;
         }
 
         .container h2 {
             margin-bottom: 20px;
             color: #7140d9;
         }
+        .container p {
+            margin-bottom: 20px;
+            color: #7140d9;
+        }
 
         .form-group {
             margin-bottom: 20px;
+            margin-right: 30px;
             text-align: left;
         }
 
@@ -153,7 +159,7 @@
 
         .btn {
             display: block;
-            width: 100%;
+            margin-bottom: 20px;
             padding: 12px;
             font-size: 16px;
             font-weight: bold;
@@ -184,11 +190,11 @@
         }
         /* About Section */ 
         .about-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
         .about { 
             flex: 1;
@@ -294,7 +300,7 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" placeholder="Enter your password" required>
                 </div>
-                <a href="index.html" class="btn">Login</a>
+                <a href="load.html" class="btn">Login</a>
 
             </form>
             <div class="signup-link">
@@ -365,7 +371,7 @@ function redirectToIndex(event) {
         event.preventDefault();
 
         // Redirect to index.html
-        window.location.href = "index.html";
+        window.location.href = "load.html";
     }
 
 </script>
