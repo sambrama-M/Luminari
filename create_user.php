@@ -14,17 +14,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($password === $confirmpassword) {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        echo "Hashed password: " . $hashed_password . "<br>";  // Debugging statement
+        echo "Hashed password: " . htmlspecialchars($hashed_password) . "<br>";  // Debugging statement
 
         $stmt = $conn->prepare("INSERT INTO users (name, email, phone_number, password) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssis", $name, $email, $phone_number, $hashed_password);
+        $stmt->bind_param("ssss", $name, $email, $phone_number, $hashed_password);
 
         if ($stmt->execute()) {
             echo "User created successfully<br>";
             header("Location: login.html");
             exit();
         } else {
-            echo "Error: " . $stmt->error . "<br>";
+            echo "Error: " . htmlspecialchars($stmt->error) . "<br>";
         }
 
         $stmt->close();

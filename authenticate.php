@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['user_id'] = $id;
         $_SESSION['user_name'] = $name;
         // Redirect to the profile page or home page
-        header("Location: index.html"); // Changed to the correct success page
+        header("Location: load.html"); // Changed to the correct success page
         exit();
     } else {
         echo "Invalid email or password.";
