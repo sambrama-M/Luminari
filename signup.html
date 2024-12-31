@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Signup - Luminari</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20231228/pngtree-contemporary-abstract-gradient-texture-for-modern-background-image_13878508.png');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #513bd0d0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .input-group input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+
+        .input-group span {
+            background: w#ac7ae9;
+            color: white;
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background: #762dd0;
+            border: none;
+            border-radius: 5px;
+            color: #f3f3f3;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: hsl(267, 75%, 60%);
+        }
+
+        .link {
+            margin-top: 15px;
+            color: #802ad0;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        .black-text {
+            color: #000; /* Black text for "Already have an account?" */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Signup to Luminari</h2>
+        <form id="signupForm">
+            <div class="input-group">
+                <span>👤</span>
+                <input type="text" id="username" placeholder="Enter your name" required>
+            </div>
+
+            <div class="input-group">
+                <span>📧</span>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <span>📱</span>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="input-group">
+                <span>🔒</span>
+                <input type="password" id="password" placeholder="Create your password" required>
+            </div>
+
+            <div class="input-group">
+                <span>🔒</span>
+                <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+            </div>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <p><span class="black-text">Already have an account?</span> <a href="login.html" class="link">Login</a></p>
+    </div>
+
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            // Validate phone number
+            const phonePattern = /^\d{10}$/; // Regular expression to match exactly 10 digits
+            if (!phonePattern.test(phone)) {
+                alert("Phone number must be exactly 10 digits.");
+                return;
+            }
+
+            // Validate password length
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                return;
+            }
+
+            // Validate matching passwords
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+            window.location.href = "login.html";
+        });
+    </script>
+</body>
+</html>

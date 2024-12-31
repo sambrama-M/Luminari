@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luminari Loading Page</title>
+  <style>
+    /* General body styling */
+    body {
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow: hidden; /* Prevent scroll during loading */
+    }
+
+    /* Center container for loader and text */
+    .center-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Styling for the loader container */
+    .loader-container {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 200px;
+    }
+
+    /* Logo Styling */
+    .logo {
+      width: 100%;
+      max-width: 200px;
+      opacity: 0; /* Initially hidden */
+      transition: opacity 1s ease-in; /* Smooth fade-in */
+    }
+
+    .logo.show {
+      opacity: 1; /* Fully visible */
+    }
+
+    /* Triangle rotating animation */
+    .triangle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      border-bottom: 173.2px solid transparent;
+      border-bottom-color: #ff0000; /* Red color */
+      animation: rotateTriangle 2s linear infinite;
+    }
+
+    /* Color changing triangle animation */
+    .triangle:nth-child(2) {
+      animation: rotateTriangle 2s linear infinite, changeColor 6s linear infinite;
+      border-bottom-color: #ff7f00; /* Orange color */
+    }
+
+    .triangle:nth-child(3) {
+      animation: rotateTriangle 2s linear infinite, changeColor 4s linear infinite;
+      border-bottom-color: #ffff00; /* Yellow color */
+    }
+
+    .triangle:nth-child(4) {
+      animation: rotateTriangle 2s linear infinite, changeColor 3s linear infinite;
+      border-bottom-color: #00ff00; /* Green color */
+    }
+
+    /* Keyframe for rotating animation */
+    @keyframes rotateTriangle {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Keyframe for color change */
+    @keyframes changeColor {
+      0% { border-bottom-color: #ff0000; }  /* Red */
+      25% { border-bottom-color: #ff7f00; }  /* Orange */
+      50% { border-bottom-color: #ffff00; }  /* Yellow */
+      75% { border-bottom-color: #00ff00; }  /* Green */
+      100% { border-bottom-color: #ff0000; }  /* Red again */
+    }
+
+    /* Fade-out effect for loader */
+    .fade-out {
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    /* Styling for the brand name animation */
+    .brand-name {
+      font-size: 0; /* Start with no size */
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      margin-left: 20px; /* Adjust spacing between logo and brand name */
+      opacity: 0; /* Start hidden */
+      transition: font-size 1.5s ease, opacity 1s ease; /* Smooth transition for size and fade-in */
+      z-index: 5; /* Brand name appears above loader but below logo */
+    }
+
+    .brand-name.show {
+      font-size: 60px; /* Final size */
+      opacity: 1; /* Make it visible */
+    }
+
+    /* Container for logo and brand name side by side */
+    .logo-container {
+      display: flex;
+      align-items: center; /* Vertically align the logo and brand name */
+      justify-content: center; /* Horizontally center the content */
+    }
+  </style>
+</head>
+<body>
+  <div class="loader-container">
+    <!-- Triangular rotating elements -->
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+  </div>
+
+  <!-- Container for logo and brand name -->
+  <div class="logo-container">
+    <!-- Loading logo from the logo.svg file -->
+    <img class="logo" src="logo.svg" alt="Luminari Logo" id="logo">
+
+    <!-- Brand Name (Luminari) -->
+    <div class="brand-name" id="brand-name">Luminari</div>
+  </div>
+
+  <script>
+    // Wait for the page to fully load before starting the animation
+    window.onload = function() {
+      // After 3 seconds, start fading out the triangles
+      setTimeout(function() {
+        // Fade out the loader container (triangles)
+        document.querySelector('.loader-container').classList.add('fade-out');
+        
+        // Show the brand name and make it grow
+        document.getElementById('brand-name').classList.add('show');
+        
+        // Logo stays visible, no change needed
+        
+        // Redirect to the homepage (index.html) after 4 seconds
+        setTimeout(function() {
+          window.location.href = 'index.html'; // Redirect to homepage
+        }, 3000); // 4 seconds delay after brand name appears
+      }, 3000); // 3 seconds delay before fading out the loader
+    };
+  </script>
+</body>
+</html>
