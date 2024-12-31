@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Taj Mahal - Explore the Wonder</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 1); 
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            backdrop-filter: blur(10px); 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 15px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, opacity 0.3s ease;
+            border: 2px solid transparent;
+        }
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+        }
+        header {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1548013146-72479768bada?fm=jpg&q=80&w=2000') no-repeat center center / cover;
+            color: white;
+            text-align: center;
+            padding: 20px 20px 30px;
+            height: 100vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-top: 60px;
+        }
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        header p {
+            font-size: 1.5rem;
+            margin: 15px 0 30px;
+            font-style: italic;
+        }
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px;
+        }
+        .gallery, .about {
+            width: 48%;
+            transition: filter 0.5s ease, opacity 0.5s ease;
+        }
+        .blurred {
+            filter: blur(5px);
+            opacity: 0.6;
+        }
+        .carousel {
+            display: flex;
+            align-items: center;
+            position: relative;
+            max-width: 100%;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            height: 400;
+        }
+        .carousel img {
+            display: block;
+            width: 100%;
+            height: 400;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel img.hidden {
+            display: none;
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-buttons button {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+        .carousel-buttons button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .content h2 {
+            margin-top: 0;
+            color: #6c63ff;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        .content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 20px 0;
+            text-align: justify;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #000; 
+            color: white;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#gallery" id="gallery-link">Gallery</a>
+        <a href="#about" id="about-link">About</a>
+    </nav>
+    <header>
+        <h1>Taj Mahal</h1>
+        <p>Explore the Beauty of the Iconic Monument</p>
+    </header>
+    <div class="content-container">
+        <div class="gallery" id="gallery-section">
+            <section id="carousel" class="carousel">
+                <img src="https://wallpapers.com/images/hd/indian-aesthetic-taj-mahal-nnwi52ldlb8nxl0x.jpg" alt="Taj Mahal at Sunrise" class="active">
+                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?fm=jpg&q=80&w=2000" alt="Taj Mahal Front View" class="hidden">
+                <img src="https://www.fourwheeldriveindia.com/public/storage/media/blog/13178.jpg" alt="Taj Mahal Gardens" class="hidden">
+                <img src="https://www.danflyingsolo.com/wp-content/uploads/2016/03/TajMahalDetail.jpg" alt="Taj Mahal Close-Up" class="hidden">
+                <img src="https://external-preview.redd.it/XLY1kvvbC9S-PcMNsEgzXMif-DlJC6SUjEdnhzRILrk.jpg?width=1080&crop=smart&auto=webp&s=e0a3bb472e7bc7dfbb7da212f469e705038e61b8" alt="taj">
+                <div class="carousel-buttons">
+                    <button id="prev">&lt;</button>
+                    <button id="next">&gt;</button>
+                </div>
+            </section>
+        </div>
+        <div class="about" id="about-section">
+            <h2>About the Taj Mahal</h2>
+            <p>The Taj Mahal, often referred to as the "Crown of Palaces," is a breathtaking symbol of eternal love and one of the world's most iconic landmarks. Commissioned by the Mughal Emperor Shah Jahan in 1632 in memory of his beloved wife, Mumtaz Mahal, who passed away during childbirth, the monument is an enduring testament to his grief and love. Located in Agra, India, the Taj Mahal combines elements of Persian, Ottoman, Indian, and Mughal architectural styles, creating a unique and harmonious design. The monument is renowned for its majestic white marble dome, which is surrounded by lush, symmetrical gardens, reflective pools, and intricately carved marble walls. The Taj Mahal’s beauty is further enhanced by its delicate inlay work of precious stones, making it a masterpiece of craftsmanship. The monument is also a UNESCO World Heritage site, attracting millions of visitors from around the world every year. Beyond its architectural grandeur, the Taj Mahal tells a deeply personal love story, and its serene surroundings evoke a sense of peace and timelessness, making it one of the most admired and photographed buildings in the world.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Taj Mahal Tourism. | <a href="#top">Back to Top</a> | <a href="index.html#monuments-gallery">Back to Monument Gallery</a></p>
+    </footer>
+    <script>
+        const galleryLink = document.getElementById('gallery-link');
+        const aboutLink = document.getElementById('about-link');
+        const gallerySection = document.getElementById('gallery-section');
+        const aboutSection = document.getElementById('about-section');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const images = document.querySelectorAll('.carousel img');
+        let currentIndex = 0;
+        function showGallery() {
+            gallerySection.classList.remove('blurred');
+            aboutSection.classList.add('blurred');
+        }
+        function showAbout() {
+            aboutSection.classList.remove('blurred');
+            gallerySection.classList.add('blurred');
+        }
+        galleryLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            showGallery();
+            gallerySection.scrollIntoView({ behavior: 'smooth' }); 
+        });
+        aboutLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            showAbout();
+            aboutSection.scrollIntoView({ behavior: 'smooth' }); 
+        });
+        function changeImage(direction) {
+            images[currentIndex].classList.add('hidden');
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            images[currentIndex].classList.remove('hidden');
+        }
+        prevButton.addEventListener('click', () => {
+            changeImage(-1);
+        });
+        nextButton.addEventListener('click', () => {
+            changeImage(1);
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === '<' || event.key === 'ArrowLeft') {
+                changeImage(-1);
+            } else if (event.key === '>' || event.key === 'ArrowRight') {
+                changeImage(1);
+            }
+        });
+        showGallery();
+    </script>
+</body>
+</html>

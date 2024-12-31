@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Agra Fort - The Majestic Stronghold of Mughal Glory</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 1); 
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            backdrop-filter: blur(10px); 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 15px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, opacity 0.3s ease;
+            border: 2px solid transparent;
+        }
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+        }
+        header {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('https://wallpapercave.com/wp/wp4909618.jpg') no-repeat center center / cover;
+            color: white;
+            text-align: center;
+            padding: 20px 20px 30px;
+            height: 100vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-top: 60px;
+        }
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        header p {
+            font-size: 1.5rem;
+            margin: 15px 0 30px;
+            font-style: italic;
+        }
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px;
+        }
+        .gallery, .about {
+            width: 48%;
+            transition: filter 0.5s ease, opacity 0.5s ease;
+        }
+        .blurred {
+            filter: blur(5px);
+            opacity: 0.6;
+        }
+        .carousel {
+            display: flex;
+            align-items: center;
+            position: relative;
+            max-width: 100%;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            height: 400;
+        }
+        .carousel img {
+            display: block;
+            width: 100%;
+            height: 400;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel img.hidden {
+            display: none;
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-buttons button {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+        .carousel-buttons button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .content h2 {
+            margin-top: 0;
+            color: #6c63ff;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        .content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 20px 0;
+            text-align: justify;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #000; 
+            color: white;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#gallery" id="gallery-link">Gallery</a>
+        <a href="#about" id="about-link">About</a>
+    </nav>
+    <header>
+        <h1>Agra Fort</h1>
+        <p>The Majestic Stronghold of Mughal Glory</p>
+    </header>
+    <div class="content-container">
+        <div class="gallery" id="gallery-section">
+            <section id="carousel" class="carousel">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/01/08/32/agra-fort.jpg?w=1200&h=-1&s=1" alt="Agra-Fort-view1" class="active">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/036/157/201/original/agra-fort-gate-time-lapse-on-a-blue-sky-day-agra-india-video.jpg" alt="Agra-Fort-view2" class="hidden">
+                <img src="https://www.baltana.com/files/wallpapers-29/Agra-Fort-HD-Wallpapers-96497.jpg" alt="Agra-Fort-view3" class="hidden">
+                <img src="https://wallpapercave.com/wp/wp4909615.jpg" alt="Agra-Fort-view4" class="hidden">
+                <img src="https://www.tripsavvy.com/thmb/LQbIdPQPnytZ9ahRomVtkcFT8ys=/1210x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1045842092-b75188668568475882eae810ba0cbfb5.jpg" alt="Agra-Fort-view5" class="hidden">
+                <div class="carousel-buttons">
+                    <button id="prev">&lt;</button>
+                    <button id="next">&gt;</button>
+                </div>
+            </section>
+        </div>
+        <div class="about" id="about-section">
+            <h2>About the Agra Fort</h2>
+            <p>The <strong>Agra Fort</strong>, a UNESCO World Heritage Site, is a magnificent <strong>Mughal</strong> fortress located in <strong>Agra</strong>, Uttar Pradesh. Built primarily by <strong>Emperor Akbar</strong> in the 16th century, it served as the main residence of the Mughal emperors until the capital was shifted to <strong>Delhi</strong>. The fort is renowned for its impressive architecture, blending <strong>Persian</strong>, <strong>Timurid</strong>, and <strong>Indian</strong> styles. The fort's massive walls, made of <strong>red sandstone</strong>, stand 21 meters high and stretch over 2.5 kilometers, enclosing a series of stunning palaces, mosques, and gardens. Some of its most notable structures include the <strong>Jahangir Mahal</strong>, <strong>Diwan-i-Am</strong>, <strong>Diwan-i-Khas</strong>, and the <strong>Moti Masjid</strong>. The fort also houses the <strong>Khas Mahal</strong>, a beautiful marble palace, and the <strong>Sheesh Mahal</strong>, a palace of mirrors. The <strong>Shah Jahan Mahal</strong>, with its delicate marble work, adds to the grandeur of the fort. The fort played a significant role in India's history, including being the place where <strong>Shah Jahan</strong> was imprisoned by his son <strong>Aurangzeb</strong>, and it offers breathtaking views of the nearby <strong>Taj Mahal</strong>. The <strong>Nagina Masjid</strong>, <strong>Musamman Burj</strong>, and the <strong>Khaas Mahal</strong> are also important features, with the latter being the location where Shah Jahan spent his final years in captivity, gazing at the Taj Mahal. Agra Fort also houses several <strong>gates</strong>, including the grand <strong>Delhi Gate</strong> and the <strong>Amar Singh Gate</strong>, which offer historical significance and are architectural marvels in their own right. As a symbol of Mughal power and architectural brilliance, Agra Fort is not only a historical monument but also a key cultural landmark, attracting millions of tourists annually. Its strategic position along the banks of the <strong>Yamuna River</strong> adds to the fort’s historical and aesthetic significance, making it one of India's most prominent landmarks.</p>
+        </div>
+    </div>
+    <footer>Agra Fort Tourism. | <a href="#top">Back to Top</a> | <a href="index.html#monuments-gallery">Back to Monument Gallery</a></p>
+    </footer>
+    <script>
+        const galleryLink = document.getElementById('gallery-link');
+        const aboutLink = document.getElementById('about-link');
+        const gallerySection = document.getElementById('gallery-section');
+        const aboutSection = document.getElementById('about-section');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const images = document.querySelectorAll('.carousel img');
+        let currentIndex = 0;
+        function showGallery() {
+            gallerySection.classList.remove('blurred');
+            aboutSection.classList.add('blurred');
+        }
+        function showAbout() {
+            aboutSection.classList.remove('blurred');
+            gallerySection.classList.add('blurred');
+        }
+        galleryLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            showGallery();
+            gallerySection.scrollIntoView({ behavior: 'smooth' }); 
+        });
+        aboutLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            showAbout();
+            aboutSection.scrollIntoView({ behavior: 'smooth' }); 
+        });
+        function changeImage(direction) {
+            images[currentIndex].classList.add('hidden');
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            images[currentIndex].classList.remove('hidden');
+        }
+        prevButton.addEventListener('click', () => {
+            changeImage(-1);
+        });
+        nextButton.addEventListener('click', () => {
+            changeImage(1);
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === '<' || event.key === 'ArrowLeft') {
+                changeImage(-1);
+            } else if (event.key === '>' || event.key === 'ArrowRight') {
+                changeImage(1);
+            }
+        });
+        showGallery();
+    </script>
+</body>
+</html>

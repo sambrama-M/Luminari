@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password - Luminari</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://www.trcnyc.org/wp-content/uploads/2018/02/11-abstract-texture-textures-form.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            backdrop-filter: brightness(0.8); 
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(10, 10, 10, 0.963);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .container h2 {
+            margin-bottom: 15px;
+            color: #513bd0d0;
+            font-size: 1.8rem;
+        }
+        .container p {
+            margin: 10px 0 20px;
+            font-size: 1rem;
+            color: #555;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            font-size: 14px;
+            border: 1px solid #b4b4b0;
+            border-radius: 8px;
+            outline: none;
+            transition: border 0.3s;
+        }
+        .form-group input:focus {
+            border-color: #7b31c9;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #f5f1f1;
+            background-color: #762dd0;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: hsl(267, 75%, 60%);
+        }
+        .login-link {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .login-link a {
+            color: #7140d9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .login-link a:hover {
+            color: #8a70ff;
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Forgot Password</h2>
+        <p>Reset your password to regain access to your account.</p>
+        <form id="forgotPasswordForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="newPassword">New Password</label>
+                <input type="password" id="newPassword" placeholder="Enter your new password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm your new password" required>
+            </div>
+            <button type="submit" class="btn">Reset Password</button>
+        </form>
+        <div class="login-link">
+            <p>Remembered your password? <a href="login.html">Login</a></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById("forgotPasswordForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const email = document.getElementById("email").value;
+            const newPassword = document.getElementById("newPassword").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+            if (newPassword.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                return;
+            }
+            if (newPassword !== confirmPassword) {
+                alert("Passwords do not match.");
+                return;
+            }
+            alert("Password reset successful!");
+            window.location.href = "login.html"; 
+        });
+    </script>
+</body>
+</html>
