@@ -355,26 +355,64 @@
                 <li><strong>Saturday:</strong> 10:00 AM - 2:00 PM (IST)</li>
                 <li><strong>Sunday:</strong> Closed</li>
             </ul>
-        </section>
-        </div>
-        <script>
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    </section>
+    </div>
+    <script>
+                // Existing smooth scrolling script
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
-    });
-});
-function redirectToIndex(event) {
-        // Prevent form submission to allow redirection
-        event.preventDefault();
 
+        // Function to enable/disable the login button
+        function updateLoginButtonState() {
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const loginBtn = document.getElementById('loginBtn');
+            if (username && email && password) {
+                loginBtn.disabled = false;
+            } else {
+                loginBtn.disabled = true;
+            }
+        }
+
+        // Event listeners for input fields
+        document.getElementById('username').addEventListener('input', updateLoginButtonState);
+        document.getElementById('email').addEventListener('input', updateLoginButtonState);
+        document.getElementById('password').addEventListener('input', updateLoginButtonState);
+
+        // Function to handle form submission and redirect
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Example API call to the Java backend
+            fetch('/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data === 'Login successful') {
+                    window.location.href = "load.html";
+                } else {
+                    alert('Invalid username or password');
+                }
+            });
+        });
         // Redirect to load.html
         window.location.href = "load.html";
     }
 
-</script>
+    </script>
 </body>
 </html>

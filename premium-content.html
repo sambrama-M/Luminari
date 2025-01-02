@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Premium Content</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #222;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        header .logo {
+            width: 120px;
+            cursor: pointer;
+        }
+
+        section {
+            background-color: white;
+            margin: 20px auto;
+            max-width: 1200px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #4CAF50;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-top: 20px;
+        }
+
+        .premium-video, .premium-article {
+            margin-bottom: 40px;
+        }
+
+        .video-container {
+            text-align: center;
+        }
+
+        .video-container video {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 8px;
+        }
+
+        .premium-article {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .premium-article h4 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .premium-article p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #666;
+        }
+
+        .interactive-section {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .downloadable-resources {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .resource-card {
+            background-color: #fff;
+            width: 100%;
+            max-width: 350px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .resource-card a {
+            display: block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin-top: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .resource-card a:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #222;
+            padding: 15px;
+            color: white;
+            text-align: center;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="logo.svg" alt="Luminary Logo" class="logo">
+        </a>
+    </header>
+
+    <section>
+        <h2>Welcome to Your Premium Content</h2>
+
+        <div class="premium-video">
+            <h3>Exclusive Video Tutorial: Master the Art of Photography</h3>
+            <div class="video-container">
+                <video controls>
+                    <source src="premium-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p>This exclusive tutorial is designed to take your photography skills to the next level. Learn about lighting, composition, and editing techniques from industry experts.</p>
+        </div>
+
+        <div class="premium-article">
+            <h4>Article: The Future of Digital Art</h4>
+            <p>As technology continues to evolve, digital art is transforming in ways we never imagined. In this article, we dive deep into the intersection of AI, digital tools, and creativity. Learn how artists are using technology to create immersive experiences and explore the role of NFTs in the future of art.</p>
+        </div>
+
+        <div class="interactive-section">
+            <h3>Interactive Quiz: Test Your Photography Knowledge</h3>
+            <p>How much do you know about photography techniques? Take this quiz to find out!</p>
+            <button onclick="window.location.href='quiz.html'">Start Quiz</button>
+        </div>
+
+        <div class="downloadable-resources">
+            <h3>Exclusive Downloads</h3>
+            <div class="resource-card">
+                <h4>Photography Cheat Sheet</h4>
+                <p>Quick reference guide for lighting, composition, and camera settings.</p>
+                <a href="download/photography-cheat-sheet.pdf" download>Download Now</a>
+            </div>
+            <div class="resource-card">
+                <h4>Editing Presets for Lightroom</h4>
+                <p>Get a collection of high-quality Lightroom presets to enhance your photos.</p>
+                <a href="download/lightroom-presets.zip" download>Download Now</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Luminari. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
