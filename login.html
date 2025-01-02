@@ -119,19 +119,25 @@
             background-color: rgba(255, 255, 255, 0.9);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(10, 10, 10, 0.963);
             width: 100%;
             max-width: 400px;
             text-align: center;
+            align-items: center;
         }
 
         .container h2 {
             margin-bottom: 20px;
             color: #7140d9;
         }
+        .container p {
+            margin-bottom: 20px;
+            color: #7140d9;
+        }
 
         .form-group {
             margin-bottom: 20px;
+            margin-right: 30px;
             text-align: left;
         }
 
@@ -153,7 +159,7 @@
 
         .btn {
             display: block;
-            width: 100%;
+            margin-bottom: 20px;
             padding: 12px;
             font-size: 16px;
             font-weight: bold;
@@ -184,11 +190,11 @@
         }
         /* About Section */ 
         .about-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
         .about { 
             flex: 1;
@@ -248,6 +254,7 @@
                 margin-bottom: 20px;
             }
         }
+
     </style>
 </head>
 <body>
@@ -270,7 +277,7 @@
         <div class="left-section">
             
             <section id="home" class="home">
-            <header><h1>Welcome to Luminari, the platform where innovation meets creativity. Dive in to explore a world of endless possibilities.</h1></header>
+            <header><h1>Welcome to Luminari, the platform where innovation meets creativity. Dive in to explore a world of endless possibilities. </h1></header>
                     <p>Luminari is a dedicated educational platform designed to bring the wonders of the world's monuments right to your screen. Our mission is to provide a comprehensive and engaging learning experience that delves into the rich history, architectural brilliance, and cultural significance of monuments from around the globe. Whether you're a history buff, a student, or just curious, Luminari offers detailed insights and fascinating stories about each landmark.</p>
                     <p>With a diverse collection of monuments, Luminari aims to inspire and educate visitors about the profound legacy these structures hold. From ancient wonders to modern marvels, our platform covers a wide array of sites that have shaped human civilization.</p>
                     <p>Join us in exploring the majestic beauty and historical importance of these incredible monuments. At Luminari, learning is a journey—one that takes you through time and across continents, all from the comfort of your home.</p>
@@ -402,6 +409,9 @@
                 }
             });
         });
+        // Redirect to load.html
+        window.location.href = "load.html";
+    }
 
     </script>
 </body>
